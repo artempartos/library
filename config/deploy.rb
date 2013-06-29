@@ -13,6 +13,7 @@ set :scm, :git
 set :repository,  "git@github.com:vgv/library.git"
 
 set :use_sudo, false
+set :ssh_options, forward_agent: true
 default_run_options[:pty] = true
 
 set :rake, "#{rake} --trace"
