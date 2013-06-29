@@ -14,3 +14,5 @@ database.yml
 /log/*.log
 /tmp
 /.idea
+
+/db/schema.rb
