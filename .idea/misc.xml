@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" project-jdk-name="RVM: ruby-2.0.0-p0" project-jdk-type="RUBY_SDK" />
+  <component name="IdProvider" IDEtalkID="4DFE1E26C921AD5FE014B5761EC3C89F" />
+  <component name="IvyIDEA.ProjectSettings">
+    <option name="artifactTypeSettings">
+      <ArtifactTypeSettings />
+    </option>
+    <option name="propertiesSettings">
+      <PropertiesSettings />
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_3" assert-keyword="false" jdk-15="false" project-jdk-name="RVM: ruby-2.0.0-p0" project-jdk-type="RUBY_SDK" />
 </project>
 
