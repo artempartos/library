@@ -6,6 +6,8 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'unicorn'
 gem 'pg'
+gem 'virtus'
+gem 'term-ansicolor'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -28,6 +30,11 @@ group :development do
   gem 'capistrano-ext'
   gem 'capi'
   gem 'capistrano-unicorn', :require => false
+end
+
+group :development, :test do
+  gem 'minitest'
+  gem 'factory_girl_rails'
 end
 
 gem 'jquery-rails'

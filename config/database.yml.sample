@@ -14,5 +14,5 @@ production:
   database: library_production
   pool: 1
   timeout: 5000
-  username: app
+  username: postgres
   password: 123456
