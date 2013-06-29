@@ -1,4 +1,4 @@
-class Web::BooksController < ApplicationController
+class Web::BooksController < Web::ApplicationController
   def index
     @books = Book.all
   end
@@ -11,18 +11,16 @@ class Web::BooksController < ApplicationController
     @book = Book.new
   end
 
-  def edit
-    @book = Book.find(params[:id])
-  end
-
   def create
+    puts params[:book]
     @book = Book.new(params[:book])
+    if @book.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
-
-  def update
-    @book = Book.find(params[:id])
-  end
-
+	
   def destroy
     @book = Book.find(params[:id])
     @book.destroy

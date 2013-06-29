@@ -1,3 +1,5 @@
 ---
 ru:
-  success: ''
+  helpers:
+    links:
+      cancel: ''

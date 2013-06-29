@@ -25,7 +25,7 @@ worker_processes 2
 # "current" directory that Capistrano sets up.
 working_directory APP_PATH + "/current" # available in 0.94.0+
 
-listen APP_PATH + "/shared/.sock", :backlog => 64
+listen APP_PATH + "/shared/unicorn.sock", :backlog => 64
 timeout 30
 pid APP_PATH + "/shared/pids/unicorn.pid"
 
