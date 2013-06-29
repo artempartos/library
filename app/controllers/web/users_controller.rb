@@ -1,4 +1,5 @@
 class Web::UsersController < Web::ApplicationController
+  skip_before_filter :authenticate_admin, :only => :new
   def index
     @users = User.all
   end

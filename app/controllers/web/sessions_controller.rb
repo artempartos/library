@@ -1,4 +1,5 @@
 class Web::SessionsController < Web::ApplicationController
+  skip_before_filter :authenticate_admin, :only => :new
   def new
     @session = UserSignInType.new
   end
