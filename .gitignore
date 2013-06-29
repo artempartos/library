@@ -16,4 +16,3 @@ database.yml
 /.idea
 
 /db/schema.rb
-/config/database.yml
