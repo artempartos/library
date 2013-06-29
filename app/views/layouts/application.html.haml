@@ -29,7 +29,8 @@
           .container.nav-collapse
             %ul.nav
               %li= link_to t('.book_list'), books_path
-              %li= link_to t('.user_list'), users_path
+              - if signed_as_admin?
+                %li= link_to t('.user_list'), admin_users_path
 
     .container
 
