@@ -12,7 +12,6 @@ class Web::UsersController < Web::ApplicationController
   end
 
   def create
-    puts params[:user]
     @user = UserRegistrationType.new(params[:user])
     if @user.save
       redirect_to root_path
