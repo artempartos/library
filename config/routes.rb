@@ -8,5 +8,8 @@ Library::Application.routes.draw do
     resource :session, only: [:new, :create, :destroy]
     resources :users, only: [:index, :show, :new, :create]
     resources :books
+    namespace :admin do
+      root to: 'welcome#index'
+    end
   end
 end
