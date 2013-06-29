@@ -202,11 +202,8 @@ DEPENDENCIES
   guard-minitest
   html2haml
   jquery-rails
-<<<<<<< HEAD
   less-rails
-=======
   pg
->>>>>>> 44d504517f3f765be90318e89375df45d87a5cbc
   rails (= 3.2.13)
   rvm-capistrano
   sass-rails (~> 3.2.3)
