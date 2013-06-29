@@ -7,10 +7,11 @@ Library::Application.routes.draw do
 
     resource :session, only: [:new, :create, :destroy]
     resources :users, only: [:new, :create]
-    resources :books
+    resources :books, only: [:index, :show]
     namespace :admin do
       resources :users, only: [:index, :show, :new, :create, :destroy]
       root to: 'welcome#index'
+      resources :books, only: [:new, :create, :destroy]
     end
 
     resources :users do
