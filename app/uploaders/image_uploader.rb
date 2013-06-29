@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class BookImageUploader < CarrierWave::Uploader::Base
+class ImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   storage :file

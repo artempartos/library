@@ -1,7 +1,7 @@
 class Book < ActiveRecord::Base
-  attr_accessible :author, :isbn, :title, :year, :pages
+  attr_accessible :author, :isbn, :title, :year, :pages, :image, :image_attributes
 
-  has_many :comments
+  has_many :comments, dependent: :destroy, inverse_of: :book
   has_one :image, dependent: :destroy, inverse_of: :book
 
   validates :author, presence: true
