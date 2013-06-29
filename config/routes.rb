@@ -26,4 +26,9 @@ Library::Application.routes.draw do
       end
     end
   end
+
+  namespace :api do
+    resource :user, only: [:show]
+  end
+
 end
