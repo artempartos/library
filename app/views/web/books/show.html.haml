@@ -1,17 +1,8 @@
 %p{ :id => "notice" }
   = notice
+  - @book.comments.each do |comment|
+    = comment.text
 
-= t('simple_form.labels.book.author')
-\:
-= @book.author
-%br
-
-= t('simple_form.labels.book.title')
-\:
-= @book.title
-%br
-
-= t('simple_form.labels.book.year')
-\:
-= @book.year
-%br
+= link_to 'Edit', edit_book_path(@book)
+|
+= link_to 'Back', books_path 

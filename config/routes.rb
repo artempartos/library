@@ -12,5 +12,17 @@ Library::Application.routes.draw do
       resources :users, only: [:index, :show, :new, :create, :destroy]
       root to: 'welcome#index'
     end
+
+    resources :users do
+      scope :module => :users do
+        resources :comments, only: [:index]
+      end
+    end
+
+    resources :books do
+      scope :module => :books do
+        resources :comments
+      end
+    end
   end
 end
