@@ -1,3 +1,7 @@
 Library::Application.routes.draw do
-  resources :books
+
+  scope :module => :web do
+    resources :books
+  end
+
 end
