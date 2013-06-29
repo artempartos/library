@@ -1,10 +1,11 @@
 class Web::UsersController < Web::ApplicationController
+  skip_before_filter :authenticate_user!, :only => [ :new, :create ]
   def index
     @users = User.all
   end
 
   def show
-    @user = User.active.where(login: params[:id]).first!
+    @user = User.find(params[:id])
   end
 
   def new

@@ -1,0 +1,32 @@
+ru:
+  time:
+    formats:
+      default: "%d-%m-%Y %H:%M"
+      admin_date_time_picker: "%Y-%m-%d %H:%M:%S"
+      minutes: "%M"
+  layouts:
+    application:
+      book_list: 'Список книг'
+      users_list: 'Список пользователей'
+  success: 'Вы успешно авторизировлись'
+  helpers:
+    web:
+      sign_in_info:
+        logged_as: 'Вы вошли как'
+        logout: 'Выйти'
+        login: 'Войти'
+  flash:
+    web:
+      sessions:
+        destroy:
+          success: 'Вы успешно вышли'
+        create:
+          success: 'Вы успешно зашли'
+  activemodel:
+    errors:
+      models:
+        user_sign_in_type:
+          attributes:
+            password:
+              user_or_password_invalid: 'Email или пароль неверны'
+

@@ -11,8 +11,9 @@
 /db/*.sqlite3
 database.yml
 # Ignore all logfiles and tempfiles.
-/log/*.log
+/log/*
 /tmp
 /.idea
 
 /db/schema.rb
+/config/database.yml
