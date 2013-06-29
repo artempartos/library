@@ -7,7 +7,7 @@ ru:
   layouts:
     application:
       book_list: 'Список книг'
-      users_list: 'Список пользователей'
+      user_list: 'Список пользователей'
   success: 'Вы успешно авторизировлись'
   helpers:
     web:
@@ -22,6 +22,12 @@ ru:
           success: 'Вы успешно вышли'
         create:
           success: 'Вы успешно зашли'
+      admin:
+        users:
+          create:
+            success: 'Пользователь был успешно создан'
+          destroy:
+            success: 'Пользователь был успешно удален'
   activemodel:
     errors:
       models:
@@ -29,4 +35,11 @@ ru:
           attributes:
             password:
               user_or_password_invalid: 'Email или пароль неверны'
+  activerecord:
+    errors:
+      models:
+        user_registration_type:
+          attributes:
+            email:
+              taken: 'Пользователь с таким email уже существует'
 
