@@ -15,4 +15,4 @@ production:
   pool: 1
   timeout: 5000
   username: postgres
-  password: 123456
+  password:
