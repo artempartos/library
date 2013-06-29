@@ -30,3 +30,5 @@ group :development do
   gem 'capistrano-unicorn', :require => false
 end
 gem 'jquery-rails'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
