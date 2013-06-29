@@ -29,6 +29,15 @@ group :development do
   gem 'capi'
   gem 'capistrano-unicorn', :require => false
 end
+
 gem 'jquery-rails'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
+gem 'bcrypt-ruby'
+gem 'validates'
+gem 'state_machine'
+gem 'haml-rails'
+gem 'simple_form'
+gem 'bcrypt-ruby'
+gem 'validates'
+gem 'state_machine'

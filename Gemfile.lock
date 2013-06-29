@@ -29,6 +29,7 @@ GEM
       i18n (= 0.6.1)
       multi_json (~> 1.0)
     arel (3.0.2)
+    bcrypt-ruby (3.0.1)
     builder (3.0.4)
     capi (0.1.1)
       capistrano
@@ -69,6 +70,11 @@ GEM
       guard (>= 0.4)
     haml (4.0.3)
       tilt
+    haml-rails (0.4)
+      actionpack (>= 3.1, < 4.1)
+      activesupport (>= 3.1, < 4.1)
+      haml (>= 3.1, < 4.1)
+      railties (>= 3.1, < 4.1)
     hash-deep-merge (0.1.1)
     highline (1.6.19)
     hike (1.2.3)
@@ -157,6 +163,9 @@ GEM
       sass (>= 3.1.10)
       tilt (~> 1.3)
     sexp_processor (4.2.1)
+    simple_form (2.1.0)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
     slop (3.4.5)
     sprockets (2.2.2)
       hike (~> 1.2)
@@ -164,6 +173,7 @@ GEM
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.7)
+    state_machine (1.2.0)
     therubyracer (0.11.4)
       libv8 (~> 3.11.8.12)
       ref
@@ -188,11 +198,15 @@ GEM
     untranslated (1.0.2)
       hash-deep-merge
       i18n
+    validates (0.0.8)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt-ruby
   capi
   capistrano
   capistrano-ext
@@ -200,6 +214,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   guard-bundler
   guard-minitest
+  haml-rails
   html2haml
   jquery-rails
   less-rails
@@ -207,9 +222,12 @@ DEPENDENCIES
   rails (= 3.2.13)
   rvm-capistrano
   sass-rails (~> 3.2.3)
+  simple_form
   sqlite3
+  state_machine
   therubyracer
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
   unicorn
   untranslated
+  validates
