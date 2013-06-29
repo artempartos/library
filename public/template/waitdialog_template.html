@@ -1,0 +1,36 @@
+<div id="wait-dialog" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="wait-dialog-header-label"
+	 aria-hidden="true">
+
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		<h3 id="wait-dialog-header-label">{{name}}</h3>
+	</div>
+
+	<div class="modal-body">
+		<table class="table table-striped">
+			<thead>
+			<tr>
+				<th>Чувак</th>
+				<th>#</th>
+			</tr>
+			</thead>
+			<tbody>
+			{{#wait_queue.waiters}}
+			<tr>
+				<td class="waiter-name">{{name}}</td>
+				{{#reader}}
+				<td class="waiter-is-reader">Читает сейчас</td>
+				{{/reader}}
+				{{^reader}}
+				<td class="waiter-is-waiter">В очереди</td>
+				{{/reader}}
+			</tr>
+			{{/wait_queue.waiters}}
+			</tbody>
+		</table>
+	</div>
+
+	<div class="modal-footer">
+		<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+	</div>
+</div>

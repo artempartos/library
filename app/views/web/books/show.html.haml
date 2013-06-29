@@ -1,8 +1,0 @@
-%p{ :id => "notice" }
-  = notice
-  - @book.comments.each do |comment|
-    = comment.text
-
-= link_to 'Edit', edit_book_path(@book)
-|
-= link_to 'Back', books_path 
