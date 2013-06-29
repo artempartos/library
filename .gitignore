@@ -9,11 +9,10 @@
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
-database.yml
+/config/database.yml
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp
 /.idea
 
 /db/schema.rb
-/config/database.yml

@@ -1,3 +1,3 @@
 class UserRegistrationType < User
-  attr_accessible :email, :password
+  attr_accessible :email, :password, :password_confirmation
 end

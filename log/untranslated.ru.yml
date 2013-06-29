@@ -1,5 +1,5 @@
 ---
 ru:
-  helpers:
-    links:
-      cancel: ''
+  layouts:
+    application:
+      user_list: ''
