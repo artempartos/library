@@ -29,7 +29,6 @@ working_directory APP_PATH + "/current" # available in 0.94.0+
 
 # listen on both a Unix domain socket and a TCP port,
 # we use a shorter backlog for quicker failover when busy
-# /home/app/workout_journal/shared/unicorn.sock
 listen APP_PATH + "/shared/unicorn.sock", :backlog => 64
 #listen 8080, :tcp_nopush => true
 
