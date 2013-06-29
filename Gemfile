@@ -29,4 +29,8 @@ group :development do
   gem 'capi'
   gem 'capistrano-unicorn', :require => false
 end
+
 gem 'jquery-rails'
+gem 'bcrypt-ruby'
+gem 'validates'
+gem 'state_machine'

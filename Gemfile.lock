@@ -29,6 +29,7 @@ GEM
       i18n (= 0.6.1)
       multi_json (~> 1.0)
     arel (3.0.2)
+    bcrypt-ruby (3.0.1)
     builder (3.0.4)
     capi (0.1.1)
       capistrano
@@ -93,9 +94,6 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    mail (2.5.4)
-      mime-types (~> 1.16)
-      treetop (~> 1.4.8)
     method_source (0.8.1)
     mime-types (1.23)
     multi_json (1.7.7)
@@ -142,8 +140,6 @@ GEM
       ffi (>= 0.5.0)
     rdoc (3.12.2)
       json (~> 1.4)
-    rdoc (3.12.2)
-      json (~> 1.4)
     ref (1.0.5)
     ruby_parser (3.1.3)
       sexp_processor (~> 4.1)
@@ -162,6 +158,7 @@ GEM
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.7)
+    state_machine (1.2.0)
     therubyracer (0.11.4)
       libv8 (~> 3.11.8.12)
       ref
@@ -181,11 +178,15 @@ GEM
     untranslated (1.0.2)
       hash-deep-merge
       i18n
+    validates (0.0.8)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt-ruby
   capi
   capistrano
   capistrano-ext
@@ -199,7 +200,9 @@ DEPENDENCIES
   rvm-capistrano
   sass-rails (~> 3.2.3)
   sqlite3
+  state_machine
   therubyracer
   uglifier (>= 1.0.3)
   unicorn
   untranslated
+  validates
