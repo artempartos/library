@@ -7,6 +7,10 @@
   %br
   = @user.email
 %p
+  %strong= model_class.human_attribute_name(:login) + ':'
+  %br
+  = @user.login
+%p
   %strong= model_class.human_attribute_name(:state) + ':'
   %br
   = @user.state

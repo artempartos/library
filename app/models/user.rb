@@ -2,6 +2,11 @@ class User < ActiveRecord::Base
   has_secure_password
   has_many :comments
 
+  attr_accessible :login
+
+  validates :login, :presence => true,
+                    :uniqueness => true
+
   validates :email, uniqueness: true, presence: true, email: true
 
   state_machine initial: :waiting_confirmation do
