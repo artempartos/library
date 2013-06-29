@@ -1,5 +1,5 @@
 %h1
-  Listing books
+  = t('.listing_books')
 
 %table
   %tr
@@ -8,14 +8,8 @@
     %th
 
 - @books.each do |book|
-  %tr
-    %td
-      = link_to 'Show', book
-    %td
-      = link_to 'Edit', edit_book_path(book)
-    %td 
-      = link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' }
-
+  = book.author
+  "
+  = link_to book.title, book
+  "
 %br
-
-= link_to 'New Book', new_book_path

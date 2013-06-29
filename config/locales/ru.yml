@@ -1,4 +1,5 @@
 ru:
+  author: 'Автор'
   time:
     formats:
       default: "%d-%m-%Y %H:%M"
@@ -10,11 +11,18 @@ ru:
       users_list: 'Список пользователей'
   success: 'Вы успешно авторизировлись'
   helpers:
+    links:
+      cancel: 'Отмена'
     web:
       sign_in_info:
         logged_as: 'Вы вошли как'
         logout: 'Выйти'
         login: 'Войти'
+    submit:
+      book:
+        create: 'Добавить книгу'
+        cancel: 'Добавить книгу'
+
   flash:
     web:
       sessions:
@@ -29,4 +37,22 @@ ru:
           attributes:
             password:
               user_or_password_invalid: 'Email или пароль неверны'
+  simple_form:
+    labels:
+      book:
+        author: 'Автор'
+        title: 'Название'
+        isbn: 'ISBN'
+        year: 'Год издания'
+        pages: 'Количество страниц'
+  web:
+    books:
+      author: 'Автор'
+      new:
+        new_book: 'Добавить книгу'
+      index:
+        listing_books: 'Список книг'
+        new_book: 'Добавить книгу'
+      form:
+        author: 'Автор'
 
