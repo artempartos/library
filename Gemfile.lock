@@ -114,7 +114,7 @@ GEM
       treetop (~> 1.4.8)
     method_source (0.8.1)
     mime-types (1.23)
-    minitest (5.0.5)
+    minitest (4.7.5)
     multi_json (1.7.7)
     net-scp (1.1.1)
       net-ssh (>= 2.6.5)
@@ -231,7 +231,7 @@ DEPENDENCIES
   html2haml
   jquery-rails
   less-rails
-  minitest
+  minitest (~> 4.5)
   pg
   rails (= 3.2.13)
   rvm-capistrano

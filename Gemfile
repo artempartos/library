@@ -19,6 +19,8 @@ group :assets do
 end
 
 group :development do
+  gem 'guard-minitest'
+  gem 'guard-bundler'
   gem 'html2haml'
   gem 'sqlite3'
   gem 'guard-minitest'
@@ -33,7 +35,7 @@ group :development do
 end
 
 group :development, :test do
-  gem 'minitest'
+  gem 'minitest', '~> 4.5'
   gem 'factory_girl_rails'
 end
 
