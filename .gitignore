@@ -16,3 +16,5 @@
 /.idea
 
 /db/schema.rb
+/public/system
+/public/uploads
