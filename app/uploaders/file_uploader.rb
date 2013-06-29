@@ -4,7 +4,7 @@ class FileUploader < CarrierWave::Uploader::Base
   storage :file
 
   def store_dir
-    "system/uploads/content_document/#{mounted_as}/#{model.id}"
+    "system/uploads/files/#{mounted_as}/#{model.id}"
   end
 
   def filename
