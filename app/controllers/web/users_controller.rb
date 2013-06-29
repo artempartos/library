@@ -4,7 +4,7 @@ class Web::UsersController < Web::ApplicationController
   end
 
   def show
-    @user = User.active.where(login: params[:id]).first!
+    @user = User.find(params[:id])
   end
 
   def new
