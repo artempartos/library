@@ -1,7 +1,17 @@
 %p{ :id => "notice" }
   = notice
 
+= t('simple_form.labels.book.author')
+\:
+= @book.author
+%br
 
-= link_to 'Edit', edit_book_path(@book)
-|
-= link_to 'Back', books_path 
+= t('simple_form.labels.book.title')
+\:
+= @book.title
+%br
+
+= t('simple_form.labels.book.year')
+\:
+= @book.year
+%br

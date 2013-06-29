@@ -20,7 +20,7 @@ class Web::BooksController < Web::ApplicationController
       render :new
     end
   end
-	
+
   def destroy
     @book = Book.find(params[:id])
     @book.destroy
