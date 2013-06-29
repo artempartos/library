@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Библиотека</title>
+
+	<meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="css/bootstrap.css" rel="stylesheet" media="screen">
+	<link href="css/bootstrap-responsive.css" rel="stylesheet" media="screen">
+
+	<style type="text/css">
+		body {
+			padding-top: 30px;
+			padding-bottom: 40px;
+		}
+
+		.book-row {
+			padding: 20px;
+		}
+
+		.book-name {
+			font-size: 150%;
+			font-weight: bold;
+			padding: 10px;
+			cursor: pointer;
+		}
+
+		.book-authors {
+			font-size: 130%;
+			padding: 10px;
+		}
+
+		.book-rating {
+			padding-left: 10px;
+			padding-bottom: 5px;
+			padding-top: 5px;
+		}
+
+		.book-available {
+			padding-left: 10px;
+			padding-bottom: 5px;
+			padding-top: 5px;
+			font-weight: bold;
+			font-size: 120%;
+			color: #408140;
+		}
+
+		.book-loan {
+			padding-left: 10px;
+			padding-top: 5px;
+			font-weight: bold;
+			font-size: 120%;
+			color: #c67605;
+		}
+
+		.book-loan-dialog {
+			padding-left: 10px;
+			cursor: pointer;
+		}
+
+		.book-pages {
+			padding-left: 10px;
+			padding-bottom: 5px;
+			padding-top: 5px;
+			font-size: 100%;
+		}
+
+		.book-description {
+			font-size: 115%;
+			padding-left: 10px;
+			padding-bottom: 5px;
+			padding-top: 5px;
+		}
+
+		.book-tags {
+			padding-left: 10px;
+			padding-bottom: 5px;
+			padding-top: 5px;
+		}
+
+		.book-tag {
+			cursor: pointer;
+			padding-right: 10px;
+		}
+
+		.comment-block {
+			padding: 10px;
+		}
+
+		.comment-header {
+			font-size: 120%;
+		}
+
+		.waiter-name {
+			font-size: 120%;
+		}
+
+		.waiter-is-reader {
+			color: #408140;
+			font-size: 110%;
+		}
+
+		.waiter-is-waiter {
+			color: #c67605;
+			font-size: 110%;
+		}
+	</style>
+</head>
+<body>
+
+<div class="container-fluid" id="book-block">
+
+</div>
+
+<div class="container-fluid">
+	<hr>
+	<footer>
+		<p>&copy; Библиотека 2013</p>
+	</footer>
+</div>
+
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/mustache.js"></script>
+<script src="library.js"></script>
+
+<script>
+	function updateState(hash) {
+		hash = hash.substring(1);
+		showBook(hash)
+	}
+
+	startup(updateState);
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<div class="row-fluid">
+	<h3>Книжные червяки:</h3>
+
+	<table class="table table-striped">
+		<thead>
+		<tr>
+			<th>Чувак</th>
+			<th>Книг прочитано</th>
+			<th>Страниц осилено</th>
+		</tr>
+		</thead>
+		<tbody>
+		{{#top_readers}}
+		<tr>
+			<td>{{login}}</td>
+			<td>{{books}}</td>
+			<td>{{pages}}</td>
+		</tr>
+		{{/top_readers}}
+		</tbody>
+	</table>
+</div>
+
+<div class="row-fluid">
+	<h3>Наиболее читаемые:</h3>
+
+	<table class="table table-striped">
+		<thead>
+		<tr>
+			<th>Книга</th>
+			<th>Автор</th>
+			<th>Рейтинг</th>
+			<th>Страниц</th>
+		</tr>
+		</thead>
+		<tbody>
+		{{#top_reads}}
+		<tr>
+			<td><a href="/book.html#{{id}}">{{name}}</a></td>
+			<td>{{author}}</td>
+			<td>{{rating}}</td>
+			<td>{{pages}}</td>
+		</tr>
+		{{/top_reads}}
+		</tbody>
+	</table>
+</div>
+
+<div class="row-fluid">
+	<h3>Наивысший рейтинг:</h3>
+	<table class="table table-striped">
+		<thead>
+		<tr>
+			<th>Книга</th>
+			<th>Автор</th>
+			<th>Рейтинг</th>
+			<th>Страниц</th>
+		</tr>
+		</thead>
+		<tbody>
+		{{#top_ratings}}
+		<tr>
+			<td><a href="/book.html#{{id}}">{{name}}</a></td>
+			<td>{{author}}</td>
+			<td>{{rating}}</td>
+			<td>{{pages}}</td>
+		</tr>
+		{{/top_ratings}}
+		</tbody>
+	</table>
+</div>
