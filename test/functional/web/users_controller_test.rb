@@ -4,6 +4,7 @@ class Web::UsersControllerTest < ActionController::TestCase
   setup do
     @user = create :user
     @attrs = attributes_for :user
+    sign_in @user
   end
 
   test 'should get index' do
