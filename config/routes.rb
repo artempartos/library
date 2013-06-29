@@ -11,5 +11,17 @@ Library::Application.routes.draw do
     namespace :admin do
       root to: 'welcome#index'
     end
+
+    resources :users do
+      scope :module => :users do
+        resources :comments, only: [:index]
+      end
+    end
+
+    resources :books do
+      scope :module => :books do
+        resources :comments
+      end
+    end
   end
 end

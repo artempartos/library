@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  sequence :string do |n|
+  sequence :string, aliases: [:text] do |n|
     "string#{n}"
   end
 
@@ -13,5 +13,13 @@ FactoryGirl.define do
 
   sequence :email do |n|
     "email_#{n}@mail.com"
+  end
+
+  sequence :id, aliases: [:number] do |n|
+    n
+  end
+
+  sequence :year do |n|
+    1000 + n
   end
 end
