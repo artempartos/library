@@ -1,5 +1,22 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  success: 'You are success authrorize'
+  helpers:
+    web:
+      sign_in_info:
+        logged_as: 'You logged as'
+        logout: 'Sign out'
+        login: 'Sign in'
+  flash:
+    web:
+      sessions:
+        destroy:
+          success: 'You success logout'
+        create:
+          success: 'You success login'
+  activemodel:
+    errors:
+      models:
+        user_sign_in_type:
+          attributes:
+            password:
+              user_or_password_invalid: 'Email or password invalid'

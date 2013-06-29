@@ -29,6 +29,7 @@ GEM
       i18n (= 0.6.1)
       multi_json (~> 1.0)
     arel (3.0.2)
+    backports (2.6.7)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
     capi (0.1.1)
@@ -52,9 +53,15 @@ GEM
       execjs
     coffee-script-source (1.6.2)
     commonjs (0.2.6)
+    descendants_tracker (0.0.1)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    factory_girl (4.2.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.2.1)
+      factory_girl (~> 4.2.0)
+      railties (>= 3.0.0)
     ffi (1.9.0)
     formatador (0.2.4)
     guard (1.8.1)
@@ -107,6 +114,7 @@ GEM
       treetop (~> 1.4.8)
     method_source (0.8.1)
     mime-types (1.23)
+    minitest (4.7.5)
     multi_json (1.7.7)
     net-scp (1.1.1)
       net-ssh (>= 2.6.5)
@@ -174,6 +182,7 @@ GEM
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.7)
     state_machine (1.2.0)
+    term-ansicolor (1.0.7)
     therubyracer (0.11.4)
       libv8 (~> 3.11.8.12)
       ref
@@ -201,6 +210,9 @@ GEM
     validates (0.0.8)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
+    virtus (0.5.4)
+      backports (~> 2.6.1)
+      descendants_tracker (~> 0.0.1)
 
 PLATFORMS
   ruby
@@ -212,12 +224,14 @@ DEPENDENCIES
   capistrano-ext
   capistrano-unicorn
   coffee-rails (~> 3.2.1)
+  factory_girl_rails
   guard-bundler
   guard-minitest
   haml-rails
   html2haml
   jquery-rails
   less-rails
+  minitest (~> 4.5)
   pg
   rails (= 3.2.13)
   rvm-capistrano
@@ -225,9 +239,11 @@ DEPENDENCIES
   simple_form
   sqlite3
   state_machine
+  term-ansicolor
   therubyracer
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
   unicorn
   untranslated
   validates
+  virtus

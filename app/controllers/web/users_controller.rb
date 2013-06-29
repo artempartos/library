@@ -1,18 +1,11 @@
 class Web::UsersController < Web::ApplicationController
-  def index
-    @users = User.all
-  end
-
-  def show
-    @user = User.active.where(login: params[:id]).first!
-  end
+  skip_before_filter :authenticate_user!, :only => [ :new, :create ]
 
   def new
     @user = User.new
   end
 
   def create
-    puts params[:user]
     @user = UserRegistrationType.new(params[:user])
     if @user.save
       redirect_to root_path

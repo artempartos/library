@@ -28,9 +28,9 @@
           %a.brand(href="#") Library
           .container.nav-collapse
             %ul.nav
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
+              %li= link_to t('.book_list'), books_path
+              - if signed_as_admin?
+                %li= link_to t('.user_list'), admin_users_path
 
     .container
 
@@ -43,10 +43,7 @@
             %h3 Sidebar
             %ul.nav.nav-list
               %li.nav-header Sidebar
-              %li= link_to "Link 1", "/path1"
-              %li= link_to "Link 2", "/path2"
-              %li= link_to "Link 3", "/path3"
-    
+              = render 'helpers/web/sign_in_info'
       %footer
         %p &copy; Company 2013
     /

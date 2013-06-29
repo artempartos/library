@@ -6,7 +6,23 @@ Library::Application.routes.draw do
     root to: 'welcome#index'
 
     resource :session, only: [:new, :create, :destroy]
-    resources :users, only: [:index, :show, :new, :create]
+    resources :users, only: [:new, :create]
     resources :books
+    namespace :admin do
+      resources :users, only: [:index, :show, :new, :create, :destroy]
+      root to: 'welcome#index'
+    end
+
+    resources :users do
+      scope :module => :users do
+        resources :comments, only: [:index]
+      end
+    end
+
+    resources :books do
+      scope :module => :books do
+        resources :comments
+      end
+    end
   end
 end
