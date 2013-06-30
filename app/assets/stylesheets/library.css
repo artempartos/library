@@ -64,6 +64,12 @@ body {
 	padding-top: 5px;
 }
 
+.book-ebook {
+	padding-left: 10px;
+	padding-bottom: 5px;
+	padding-top: 5px;	
+}
+
 .book-tag {
 	cursor: pointer;
 	padding-right: 10px;

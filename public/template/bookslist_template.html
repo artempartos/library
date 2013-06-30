@@ -18,17 +18,20 @@
 			Рейтинг: {{rating}}
 		</div>
 
-		{{^holder}}
+		{{#available}}
 		<div class='row-fluid book-available'>
-			Доступна (<a onclick='holdBook({{id}}, false);'>Взять почитать</a>)
+			Доступна
 		</div>
-		{{/holder}}
+		{{/available}}
 
-		{{#holder}}
+		{{^available}}
 		<div class='row-fluid book-loan'>
-			На руках
+			На руках (перед тобой - {{wait_queue.length}})
 		</div>
-		{{/holder}}
+		<div class="row-fluid book-loan-dialog">
+			<a onclick="showWaitQueue({{id}});">Посмотреть очередь</a>
+		</div>
+		{{/available}}
 
 		<div class='row-fluid book-description'>
 			{{{description}}}
