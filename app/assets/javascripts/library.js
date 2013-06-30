@@ -75,7 +75,7 @@ function holdBook(id, onBookPage) {
 			clearCache();
 
 			if (onBookPage) {
-				window.location = "/book?" + id;
+				window.location = "/book#" + id;
 			} else {
 				window.location = "/books#show=loan";
 			}
