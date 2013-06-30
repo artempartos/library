@@ -13,11 +13,11 @@ function startup(updateState) {
 }
 
 function availableBookFilter(book) {
-	return book.available;
+	return book.holder == null;
 }
 
 function loanBookFilter(book) {
-	return !book.available;
+	return book.holder != null;
 }
 
 function allBookFilter(book) {
@@ -26,17 +26,7 @@ function allBookFilter(book) {
 
 function createMyBookFilter(userName) {
 	return function (book) {
-		if (!book.available) {
-			// книга должна быть взята
-			if (book.wait_queue != null && book.wait_queue.length > 0) {
-				// если первый человек в списке ожидания это я - значит книга взята мной
-				if (book.wait_queue[0] == userName) {
-					return true;
-				}
-			}
-		}
-
-		return false;
+		return book.holder == userName;
 	}
 }
 
@@ -53,30 +43,12 @@ function filterBooks(filter, books) {
 		for (var i = 0; i < books.length; i++) {
 			var book = books[i];
 			if (filter(book)) {
-				filteredBooks.push(prepareBookForRender(book));
+				filteredBooks.push(book);
 			}
 		}
 	}
 
 	return filteredBooks;
-}
-
-function prepareBookForRender(book) {
-	if (book.wait_queue != null && book.wait_queue instanceof Array) {
-		var length = book.wait_queue.length;
-		var preparedQueue = [];
-
-		for (var i = 0; i < book.wait_queue.length; i++) {
-			var name = book.wait_queue[i];
-			var reader = (i == 0);
-			var waiter = new Object({reader: reader, name: name});
-			preparedQueue.push(waiter);
-		}
-
-		book.wait_queue = new Object({length: length, waiters: preparedQueue});
-	}
-
-	return book;
 }
 
 function showBooks(filter) {
@@ -88,7 +60,7 @@ function showBooks(filter) {
 
 function showBook(id) {
 	getBook(id, function (book) {
-		drawBook(prepareBookForRender(book));
+		drawBook(book);
 	});
 }
 
@@ -96,9 +68,9 @@ function showDashboard() {
 	getDashboard(drawDashboard);
 }
 
-function showWaitQueue(id) {
-	getBook(id, function (book) {
-		drawWaitDialog(prepareBookForRender(book));
+function holdBook(id) {
+	$.post("/api/book?id=" + id, function (data) {
+		showBook(id);
 	});
 }
 
@@ -132,20 +104,6 @@ function drawDashboard(dashboard) {
 		var htmlContent = Mustache.render(template, dashboard);
 		// запулим HTML в блок
 		$("#dashboard-block").append(htmlContent);
-	});
-}
-
-function drawWaitDialog(book) {
-	// удалим старый блок с диалогом
-	$("#wait-dialog").remove();
-
-	$.get("/template/waitdialog_template.html", function (template) {
-		// отрендерим темплейт
-		var htmlContent = Mustache.render(template, book);
-		// запулим HTML в блок
-		$("body").append(htmlContent);
-		// отобразим
-		$("#wait-dialog").modal();
 	});
 }
 

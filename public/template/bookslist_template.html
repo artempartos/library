@@ -7,7 +7,7 @@
 
 	<div class='span8'>
 		<div class='row-fluid book-name'>
-			<a href="/book#{{id}}">{{name}}</a>
+			<a href="/book.html#{{id}}">{{name}}</a>
 		</div>
 
 		<div class='row-fluid book-author'>
@@ -18,20 +18,17 @@
 			Рейтинг: {{rating}}
 		</div>
 
-		{{#available}}
+		{{^holder}}
 		<div class='row-fluid book-available'>
-			Доступна
+			Доступна (<a onclick='holdBook({{id}});'>Взять почитать</a>)
 		</div>
-		{{/available}}
+		{{/holder}}
 
-		{{^available}}
+		{{#holder}}
 		<div class='row-fluid book-loan'>
-			На руках (перед тобой - {{wait_queue.length}})
+			На руках
 		</div>
-		<div class="row-fluid book-loan-dialog">
-			<a onclick="showWaitQueue({{id}});">Посмотреть очередь</a>
-		</div>
-		{{/available}}
+		{{/holder}}
 
 		<div class='row-fluid book-description'>
 			{{{description}}}
