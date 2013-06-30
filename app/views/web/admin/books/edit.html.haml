@@ -1,4 +1,5 @@
 - model_class = Book
 .page-header
   %h1=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize
+- @url = admin_book_path(@book)
 = render :partial => "form"
