@@ -1,8 +1,8 @@
 ---
 ru:
+  success: ''
   web:
     admin:
       books:
         form:
           download: ''
-  success: ''
