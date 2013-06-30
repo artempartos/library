@@ -9,9 +9,9 @@ if @book.image
 end
 json.tags @book.tag_list
 if [*5..30].sample.even?
-  json.availible = true
+  json.available = true
 else
-  json.availible = false
+  json.available = false
   json.wait_queue = User.scoped.map(&:login)
 end
 json.pages = @book.pages
