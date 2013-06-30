@@ -33,13 +33,9 @@ Library::Application.routes.draw do
 
   namespace :api do
     resource :user, only: [:show]
-<<<<<<< HEAD
-
     resource :dashboard, only: [:show]
-=======
     resources :books, only: [:index]
     resource :book, only: [:show]
->>>>>>> add api
   end
 
 end
