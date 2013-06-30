@@ -75,9 +75,9 @@ function holdBook(id, onBookPage) {
 			clearCache();
 
 			if (onBookPage) {
-				showBook(id);
+				window.location = "/book?" + id;
 			} else {
-				showBooks(loanBookFilter);
+				window.location = "/books#show=loan";
 			}
 		});
 }
