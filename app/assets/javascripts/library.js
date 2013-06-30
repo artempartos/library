@@ -175,7 +175,7 @@ function getBooks(callback) {
 }
 
 function getBook(id, callback) {
-	$.getJSON('book.json?' + id, callback);
+	$.getJSON('book.json?id=' + id, callback);
 }
 
 function getCurrentUser(callback) {
