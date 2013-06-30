@@ -3,9 +3,6 @@ ru:
   web:
     admin:
       books:
-        index:
-          listing_books: ''
-          actions: ''
-          edit: ''
-          destroy: ''
+        form:
+          download: ''
   success: ''
