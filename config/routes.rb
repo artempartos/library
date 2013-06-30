@@ -13,8 +13,8 @@ Library::Application.routes.draw do
     namespace :admin do
       root to: 'welcome#index'
 
-      resources :users, only: [:index, :show, :new, :create, :destroy]
-      resources :books, only: [:index, :edit, :show, :new, :create, :destroy] do
+      resources :users
+      resources :books, only: [:index, :update, :edit, :show, :new, :create, :destroy] do
         collection do
           get 'tagged'
         end

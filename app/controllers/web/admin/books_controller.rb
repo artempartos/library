@@ -10,9 +10,9 @@ class Web::Admin::BooksController < Web::Admin::ApplicationController
 
   def update
     @book = Book.find(params[:id])
-    if @book.update_attributes(params[:page])
+    if @book.update_attributes(params[:book])
       f(:success)
-      redirect_to edit_admin_book_path
+      redirect_to edit_admin_book_path(@book)
     else
       f(:error)
       render :edit

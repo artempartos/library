@@ -11,6 +11,21 @@ class Web::Admin::UsersController < Web::Admin::ApplicationController
     @user = User.new
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(params[:user])
+      f(:success)
+      redirect_to edit_admin_user_path(@user)
+    else
+      f(:error)
+      render :edit
+    end
+  end
+
   def create
     @user = UserRegistrationType.new(params[:user])
     if @user.save

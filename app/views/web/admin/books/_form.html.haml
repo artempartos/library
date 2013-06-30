@@ -1,4 +1,4 @@
-= simple_form_for @book, url: admin_books_path, :html => { :class => 'form-horizontal' } do |f|
+= simple_form_for @book, url: admin_book_path(@book), :html => { :class => 'form-horizontal' } do |f|
   = f.input :author
   = f.input :title
   = f.input :isbn
