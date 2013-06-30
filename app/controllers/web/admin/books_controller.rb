@@ -6,7 +6,6 @@ class Web::Admin::BooksController < Web::Admin::ApplicationController
 
   def edit
     @book = Book.find(params[:id])
-    puts @book.image.file
     @book.build_image unless @book.image
     @book.build_e_book unless @book.e_book
   end
