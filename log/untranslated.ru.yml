@@ -1,22 +1,8 @@
 ---
 ru:
-  success: ''
   web:
     admin:
       books:
         form:
           download: ''
-        index:
-          listing_books: ''
-          actions: ''
-          edit: ''
-          destroy: ''
-        new:
-          new_book: ''
-  helpers:
-    actions: ''
-    links:
-      destroy: ''
-      edit: ''
-      new: ''
-      back: ''
+  success: ''
