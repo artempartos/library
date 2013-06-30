@@ -1,4 +1,4 @@
-# encoding: utf-8git
+# encoding: utf-8
 class Api::DashboardsController < Api::ApplicationController
   def show
     hash = {top_readers: [
