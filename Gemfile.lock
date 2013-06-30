@@ -129,6 +129,8 @@ GEM
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
     pg (0.15.1)
+    polyamorous (0.5.0)
+      activerecord (~> 3.0)
     polyglot (0.3.3)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
@@ -158,6 +160,10 @@ GEM
       thor (>= 0.14.6, < 2.0)
     raindrops (0.11.0)
     rake (10.1.0)
+    ransack (0.7.0)
+      actionpack (~> 3.0)
+      activerecord (~> 3.0)
+      polyamorous (~> 0.5.0)
     rb-fsevent (0.9.3)
     rb-inotify (0.9.0)
       ffi (>= 0.5.0)
@@ -213,6 +219,7 @@ GEM
     untranslated (1.0.2)
       hash-deep-merge
       i18n
+    usefull_scopes (0.2.1)
     validates (0.0.8)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -242,6 +249,7 @@ DEPENDENCIES
   minitest (~> 4.5)
   pg
   rails (= 3.2.13)
+  ransack
   rvm-capistrano
   sass-rails (~> 3.2.3)
   simple_form
@@ -253,5 +261,6 @@ DEPENDENCIES
   uglifier (>= 1.0.3)
   unicorn
   untranslated
+  usefull_scopes
   validates
   virtus

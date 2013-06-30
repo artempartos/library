@@ -3,3 +3,6 @@ ru:
   layouts:
     application:
       user_list: ''
+  helpers:
+    links:
+      new: ''

@@ -1,6 +1,7 @@
 class Web::BooksController < Web::ApplicationController
   def index
-    @books = Book.all
+    @q = Book.ransack(params[:q])
+    @books = @q.result.by_updated_at
   end
 
   def show
