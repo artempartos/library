@@ -33,6 +33,8 @@ Library::Application.routes.draw do
 
   namespace :api do
     resource :user, only: [:show]
+
+    resource :dashboard, only: [:show]
   end
 
 end
