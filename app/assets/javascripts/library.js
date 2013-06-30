@@ -69,9 +69,11 @@ function showDashboard() {
 }
 
 function holdBook(id) {
-	$.post("/api/book?id=" + id, function (data) {
-		showBook(id);
-	});
+	$.ajax({
+		type: "PUT",
+		url: "/api/book?id=" + id}).done(function (msg) {
+			showBook(id);
+		});
 }
 
 function drawBooksList(books) {
