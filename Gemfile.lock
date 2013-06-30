@@ -28,6 +28,8 @@ GEM
     activesupport (3.2.13)
       i18n (= 0.6.1)
       multi_json (~> 1.0)
+    acts-as-taggable-on (2.4.1)
+      rails (>= 3, < 5)
     arel (3.0.2)
     backports (2.6.7)
     bcrypt-ruby (3.0.1)
@@ -44,6 +46,9 @@ GEM
       capistrano (>= 1.0.0)
     capistrano-unicorn (0.1.9)
       capistrano
+    carrierwave (0.8.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
     coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -114,6 +119,8 @@ GEM
       treetop (~> 1.4.8)
     method_source (0.8.1)
     mime-types (1.23)
+    mini_magick (3.6.0)
+      subexec (~> 0.2.1)
     minitest (4.7.5)
     multi_json (1.7.7)
     net-scp (1.1.1)
@@ -124,6 +131,8 @@ GEM
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
     pg (0.15.1)
+    polyamorous (0.5.0)
+      activerecord (~> 3.0)
     polyglot (0.3.3)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
@@ -153,6 +162,10 @@ GEM
       thor (>= 0.14.6, < 2.0)
     raindrops (0.11.0)
     rake (10.1.0)
+    ransack (0.7.0)
+      actionpack (~> 3.0)
+      activerecord (~> 3.0)
+      polyamorous (~> 0.5.0)
     rb-fsevent (0.9.3)
     rb-inotify (0.9.0)
       ffi (>= 0.5.0)
@@ -182,6 +195,7 @@ GEM
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.7)
     state_machine (1.2.0)
+    subexec (0.2.3)
     term-ansicolor (1.0.7)
     therubyracer (0.11.4)
       libv8 (~> 3.11.8.12)
@@ -207,6 +221,7 @@ GEM
     untranslated (1.0.2)
       hash-deep-merge
       i18n
+    usefull_scopes (0.2.1)
     validates (0.0.8)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -218,11 +233,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on
   bcrypt-ruby
   capi
   capistrano
   capistrano-ext
   capistrano-unicorn
+  carrierwave
   coffee-rails (~> 3.2.1)
   factory_girl_rails
   guard-bundler
@@ -231,9 +248,11 @@ DEPENDENCIES
   html2haml
   jquery-rails
   less-rails
+  mini_magick
   minitest (~> 4.5)
   pg
   rails (= 3.2.13)
+  ransack
   rvm-capistrano
   sass-rails (~> 3.2.3)
   simple_form
@@ -245,5 +264,6 @@ DEPENDENCIES
   uglifier (>= 1.0.3)
   unicorn
   untranslated
+  usefull_scopes
   validates
   virtus

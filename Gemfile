@@ -8,6 +8,7 @@ gem 'unicorn'
 gem 'pg'
 gem 'virtus'
 gem 'term-ansicolor'
+gem 'usefull_scopes'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -39,14 +40,17 @@ group :development, :test do
   gem 'factory_girl_rails'
 end
 
+gem 'acts-as-taggable-on'
 gem 'jquery-rails'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 gem 'bcrypt-ruby'
 gem 'validates'
-gem 'state_machine'
 gem 'haml-rails'
 gem 'simple_form'
 gem 'bcrypt-ruby'
 gem 'validates'
 gem 'state_machine'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'ransack'
