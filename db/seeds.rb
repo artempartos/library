@@ -9,3 +9,8 @@ user.password = 123456
 user.password_confirmation = 123456
 user.save!
 
+
+5.times do |i|
+  b = Book.create(author: "name #{i}", isbn: "isbn #{i}", title: "title #{i}", year: i, pages: i*10)
+  b.holder = User.first if i.even?
+end

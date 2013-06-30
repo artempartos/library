@@ -1,0 +1,23 @@
+adsfasdfadsf
+%p
+  = @book.title
+%p
+  = @book.author
+%p
+  = @book.year
+%p
+  = @book.pages
+%p
+  = @book.title
+- if @book.tags.any?
+  - @book.tags.each do |tag|
+    = link_to tag.name, tagged_admin_books_path(:tag => tag.name)
+
+%p{ :id => "notice" }
+  = notice
+  - @book.comments.each do |comment|
+    = comment.text
+
+= link_to 'Edit', edit_admin_book_path(@book)
+|
+= link_to 'Back', admin_books_path

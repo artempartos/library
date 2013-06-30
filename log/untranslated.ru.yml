@@ -1,0 +1,12 @@
+---
+ru:
+  web:
+    admin:
+      books:
+        index:
+          listing_books: ''
+          actions: ''
+          edit: ''
+          destroy: ''
+        new:
+          new_book: ''

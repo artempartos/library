@@ -11,7 +11,11 @@ Library::Application.routes.draw do
     namespace :admin do
       resources :users, only: [:index, :show, :new, :create, :destroy]
       root to: 'welcome#index'
-      resources :books, only: [:new, :create, :destroy]
+      resources :books, only: [:index, :edit, :show, :new, :create, :destroy] do
+        collection do 
+          get 'tagged'
+        end
+      end
     end
 
     resources :users do
@@ -26,4 +30,9 @@ Library::Application.routes.draw do
       end
     end
   end
+
+  namespace :api do
+    resource :user, only: [:show]
+  end
+
 end
