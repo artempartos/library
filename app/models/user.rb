@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :company, :reject_if => :all_blank, :allow_destroy => true
 
-  attr_accessible :login
+  attr_accessible :login, :email, :password
 
   validates :login, :presence => true,
                     :uniqueness => true
