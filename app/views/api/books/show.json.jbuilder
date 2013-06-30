@@ -8,7 +8,7 @@ if @book.image
   json.image @book.image.file
 end
 json.tags @book.tag_list
-if @book.holder?
+if @book.holder_id
     json.holder @book.holder
   end
 json.pages @book.pages
