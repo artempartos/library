@@ -153,5 +153,5 @@ function getDashboard(callback) {
 }
 
 function clearCache() {
-	window.localStorage.setItem("books-cache", "");
+	window.localStorage.removeItem("books-cache");
 }
