@@ -6,4 +6,11 @@ class Api::BooksController < Api::ApplicationController
   def show
     @book = Book.includes(:comments).find(params[:id])
   end
+
+  def update
+    @book = Book.find(params[:id])
+    @book.holder = current_user
+    @book.save
+    respond_with @book
+  end
 end
