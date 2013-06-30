@@ -9,10 +9,10 @@ if @book.image
 end
 json.tags @book.tag_list
 if @book.id.even?
-  json.available = true
+  json.available true
 else
-  json.available = false
-  json.wait_queue = User.scoped.map(&:login)
+  json.available false
+  json.wait_queue User.scoped.map(&:login)
 end
-json.pages = @book.pages
+json.pages @book.pages
 json.comments @book.comments, :id, :text, :user_id, :book_id
