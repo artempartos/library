@@ -1,0 +1,13 @@
+%h1
+  Listing comments
+
+%table
+  %tr
+    %th
+
+- @comments.each do |comment|
+  %tr
+    %td
+      = comment.text
+
+%br
