@@ -1,4 +1,4 @@
-admin = User.find_or_initialize_by_email("admin@bk.ru")
+  admin = User.find_or_initialize_by_email("admin@bk.ru")
 admin.password = 123456
 admin.password_confirmation = 123456
 admin.admin = true
