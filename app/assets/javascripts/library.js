@@ -115,6 +115,8 @@ function drawBooksList(books) {
 }
 
 function drawBook(book) {
+	$("#book-block").empty();
+
 	// удалим старый контент, не будем засирать DOM
 	$.get("template/bookdetails_template.html", function (template) {
 		// отрендерим темплейт
