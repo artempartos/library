@@ -1,5 +1,5 @@
 class Book < ActiveRecord::Base
-  attr_accessible :author, :isbn, :title, :year, :pages, :image, :image_attributes, :e_book, :e_book_attributes, :tag_list
+  attr_accessible :author, :isbn, :title, :year, :pages, :image, :image_attributes, :e_book, :e_book_attributes, :tag_list, :description
 
   has_many :comments, dependent: :destroy, inverse_of: :book
   has_one :e_book, dependent: :destroy, inverse_of: :book

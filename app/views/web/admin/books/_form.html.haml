@@ -4,6 +4,7 @@
   = f.input :isbn
   = f.input :year
   = f.input :pages
+  = f.input :description, as: :text
 
   = f.simple_fields_for :image, html: { multipart: true } do |image_form|
     - if @book.image.file?

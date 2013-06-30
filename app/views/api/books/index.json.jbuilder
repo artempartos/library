@@ -5,6 +5,9 @@ json.array! @books do |book|
   json.authors book.author
   json.isbn book.isbn
   json.pages book.pages
+  if book.description
+    json.description book.description
+  end
   if book.image
     json.image book.image.file
   end
