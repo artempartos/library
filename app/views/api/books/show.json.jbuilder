@@ -8,7 +8,7 @@ if @book.image
   json.image @book.image.file
 end
 json.tags @book.tag_list
-if [*5..30].sample.even?
+if book.id.even?
   json.available = true
 else
   json.available = false
