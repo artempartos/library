@@ -1,9 +1,0 @@
----
-en:
-  activemodel:
-    errors:
-      models:
-        user_sign_in_type:
-          attributes:
-            password:
-              user_or_password_invalid: ''

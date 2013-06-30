@@ -9,6 +9,7 @@ gem 'pg'
 gem 'virtus'
 gem 'term-ansicolor'
 gem 'usefull_scopes'
+gem 'jbuilder'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -54,3 +55,4 @@ gem 'state_machine'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'ransack'
+gem 'cocoon'

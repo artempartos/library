@@ -1,0 +1,60 @@
+<div class="container-fluid">
+	<div class="btn-group" data-toggle="buttons-radio">
+		<button type="button" class="btn btn-primary btn-success" id="available-books">Свободные</button>
+		<button type="button" class="btn" id="all-books">Все</button>
+		<button type="button" class="btn btn-primary btn-warning" id="loan-books">На руках</button>
+		<button type="button" class="btn btn-primary btn-info" id="my-books">У меня</button>
+	</div>
+</div>
+
+<div class="container-fluid main-books-container" id="books-block">
+
+</div>
+
+<script>
+	// навешаем обработчики на кнопки
+	$("#available-books").click(function (e) {
+		window.location.hash = "show=available";
+	});
+	$("#all-books").click(function (e) {
+		window.location.hash = "show=all";
+	});
+	$("#loan-books").click(function (e) {
+		window.location.hash = "show=loan";
+	});
+	$("#my-books").click(function (e) {
+		window.location.hash = "show=my";
+	});
+
+	function selectButton(name) {
+		$("#available-books").removeClass("active");
+		$("#all-books").removeClass("active");
+		$("#loan-books").removeClass("active");
+		$("#my-books").removeClass("active");
+
+		$("#" + name + "-books").addClass("active");
+	}
+
+	function updateState(hash) {
+		if ("#show=available" == hash || "" == hash) {
+			selectButton("available");
+			showBooks(availableBookFilter, "#books-block");
+		} else if ("#show=all" == hash) {
+			selectButton("all");
+			showBooks(allBookFilter, "#books-block");
+		} else if ("#show=loan" == hash) {
+			selectButton("loan");
+			showBooks(loanBookFilter, "#books-block");
+		} else if ("#show=my" == hash) {
+			selectButton("my");
+			showBooks(createMyBookFilter(window.currentUser.login), "#books-block");
+		} else if (hash.indexOf("#tag=") == 0) {
+			selectButton("none");
+
+			var tagName = hash.substring("#tag=".length);
+			showBooks(createBookTagFilter(tagName));
+		}
+	}
+
+	startup(updateState);
+</script>

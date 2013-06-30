@@ -1,7 +1,16 @@
 class User < ActiveRecord::Base
+  attr_accessible :company_attributes
+
   has_secure_password
   has_many :comments
-  has_many :books
+  has_one :company
+
+  accepts_nested_attributes_for :company, :reject_if => :all_blank, :allow_destroy => true
+
+  attr_accessible :login
+
+  validates :login, :presence => true,
+                    :uniqueness => true
 
   validates :email, uniqueness: true, presence: true, email: true
 

@@ -1,11 +1,32 @@
-class Web::Admin::BooksController < Web::ApplicationController
+class Web::Admin::BooksController < Web::Admin::ApplicationController
   def index
     @q = Book.ransack(params[:q])
     @books = @q.result.by_updated_at
   end
 
+  def edit
+    @book = Book.find(params[:id])
+  end
+
+  def update
+    @book = Book.find(params[:id])
+    if @book.update_attributes(params[:page])
+      f(:success)
+      redirect_to edit_admin_book_path
+    else
+      f(:error)
+      render :edit
+    end
+  end
+
+  def show
+    @book = Book.find(params[:id])
+  end
+
   def new
     @book = Book.new
+    @book.build_image
+    @book.build_e_book
   end
 
   def edit
@@ -28,6 +49,8 @@ class Web::Admin::BooksController < Web::ApplicationController
   def destroy
     @book = Book.find(params[:id])
     @book.destroy
+
+    redirect_to admin_books_path
   end
 
   def tagged
