@@ -9,9 +9,9 @@ Library::Application.routes.draw do
     resources :users, only: [:new, :create]
     resources :books, only: [:index, :show]
     namespace :admin do
-      resources :users, only: [:index, :show, :new, :create, :destroy]
       root to: 'welcome#index'
-      resources :books, only: [:new, :create, :destroy]
+      resources :users, only: [:index, :show, :new, :create, :destroy]
+      resources :books, only: [:index, :show, :edit, :new, :create, :destroy]
     end
 
     resources :users do

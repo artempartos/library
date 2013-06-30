@@ -28,7 +28,10 @@
           %a.brand(href="#") Library
           .container.nav-collapse
             %ul.nav
-              %li= link_to t('.book_list'), books_path
+              - if signed_as_admin?
+                %li= link_to t('.book_list'), admin_books_path
+              - else
+                %li= link_to t('.book_list'), books_path
               - if signed_as_admin?
                 %li= link_to t('.user_list'), admin_users_path
 

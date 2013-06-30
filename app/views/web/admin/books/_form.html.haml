@@ -1,4 +1,4 @@
-= simple_form_for @book, :html => { :class => 'form-horizontal' } do |f|
+= simple_form_for @book, url: admin_books_path, :html => { :class => 'form-horizontal' } do |f|
   = f.input :author
   = f.input :title
   = f.input :isbn
@@ -10,6 +10,12 @@
       = image_tag @book.image.file, title: @book.image.title
     = image_form.input :title
     = image_form.input :file, as: :file
+
+  = f.simple_fields_for :e_book, html: { multipart: true } do |e_book_form|
+    - if @book.e_book.file?
+      = link_to t('.download'), @book.e_book.file.to_s, class: 'controls'
+    = e_book_form.input :title
+    = e_book_form.input :file, as: :file
 
   .form-actions
     = f.button :submit, :class => 'btn-primary'

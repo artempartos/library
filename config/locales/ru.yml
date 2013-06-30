@@ -68,4 +68,8 @@ ru:
           attributes:
             email:
               taken: 'Пользователь с таким email уже существует'
+        book:
+          attributes:
+            isbn:
+              taken: 'Книга с таким isbn уже существует'
 
