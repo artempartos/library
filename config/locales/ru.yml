@@ -22,7 +22,8 @@ ru:
       book:
         create: 'Добавить книгу'
         cancel: 'Добавить книгу'
-
+      user:
+        create: 'Зарегистрироваться'
   flash:
     web:
       sessions:
@@ -51,6 +52,13 @@ ru:
         isbn: 'ISBN'
         year: 'Год издания'
         pages: 'Количество страниц'
+      user:
+        email: 'E-mail'
+        password: 'Пароль'
+        user: 'Зарегистрироваться'
+      company:
+        company: 'Создать компанию:'
+        name: 'Имя компании'
   web:
     books:
       author: 'Автор'
@@ -61,6 +69,9 @@ ru:
         new_book: 'Добавить книгу'
       form:
         author: 'Автор'
+    users:
+      new:
+        new_user: 'Зарегистрироваться'
   activerecord:
     errors:
       models:

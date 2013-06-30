@@ -1,9 +1,14 @@
 class Book < ActiveRecord::Base
-  attr_accessible :author, :isbn, :title, :year, :pages, :image, :image_attributes, :e_book, :e_book_attributes
+  attr_accessible :author, :isbn, :title, :year, :pages, :image, :image_attributes, :e_book, :e_book_attributes, :tag_list
 
   has_many :comments, dependent: :destroy, inverse_of: :book
   has_one :e_book, dependent: :destroy, inverse_of: :book
   has_one :image, dependent: :destroy, inverse_of: :book
+  include BookRepository
+
+  belongs_to :holder, class_name: User
+  has_and_belongs_to_many :tags
+  acts_as_taggable_on :tags
 
   validates :author, presence: true
   validates :isbn, presence: true, uniqueness: true
@@ -13,4 +18,19 @@ class Book < ActiveRecord::Base
 
   accepts_nested_attributes_for :e_book, allow_destroy: true, reject_if: :all_blank
   accepts_nested_attributes_for :image, allow_destroy: true, reject_if: :all_blank
+  state_machine :state, initial: :free do
+    state :free
+    state :busy do
+      validates :holder, presence: true
+    end
+
+    event :rent do
+      transition free: :busy
+    end
+
+    event :return do
+      transition busy: :free
+    end
+  end
+
 end
