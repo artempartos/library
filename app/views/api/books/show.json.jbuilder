@@ -1,5 +1,5 @@
 json.id @book.id
-json.title @book.title
+json.name @book.title
 json.year @book.year
 json.authors @book.author
 json.isbn @book.isbn

@@ -1,7 +1,6 @@
 class Api::BooksController < Api::ApplicationController
   def index
     @books = Book.scoped
-    respond_with @books
   end
 
   def show
