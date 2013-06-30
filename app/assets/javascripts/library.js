@@ -106,7 +106,7 @@ function drawBooksList(books) {
 	// очистим все книги, которые уже могут быть отображены в блоке
 	$("#books-block").empty();
 
-	$.get("template/bookslist_template.html", function (template) {
+	$.get("/template/bookslist_template.html", function (template) {
 		// отрендерим темплейт
 		var htmlContent = Mustache.render(template, new Object({books: books}));
 		// запулим HTML в блок
@@ -118,7 +118,7 @@ function drawBook(book) {
 	$("#book-block").empty();
 
 	// удалим старый контент, не будем засирать DOM
-	$.get("template/bookdetails_template.html", function (template) {
+	$.get("/template/bookdetails_template.html", function (template) {
 		// отрендерим темплейт
 		var htmlContent = Mustache.render(template, book);
 		// запулим HTML в блок
@@ -127,7 +127,7 @@ function drawBook(book) {
 }
 
 function drawDashboard(dashboard) {
-	$.get("template/dashboard_template.html", function (template) {
+	$.get("/template/dashboard_template.html", function (template) {
 		// отрендерим темплейт
 		var htmlContent = Mustache.render(template, dashboard);
 		// запулим HTML в блок
@@ -139,7 +139,7 @@ function drawWaitDialog(book) {
 	// удалим старый блок с диалогом
 	$("#wait-dialog").remove();
 
-	$.get("template/waitdialog_template.html", function (template) {
+	$.get("/template/waitdialog_template.html", function (template) {
 		// отрендерим темплейт
 		var htmlContent = Mustache.render(template, book);
 		// запулим HTML в блок
@@ -164,7 +164,7 @@ function getBooks(callback) {
 	}
 
 	// в кеше неведомое говно, загрузим с сервера
-	$.getJSON('books.json', function (data) {
+	$.getJSON('/api/books.json', function (data) {
 		// закешируем свежие данные
 		cachedBooks = new Object({timestamp: Date.now(), books: data});
 		window.localStorage.setItem("books-cache", JSON.stringify(cachedBooks));
@@ -175,13 +175,13 @@ function getBooks(callback) {
 }
 
 function getBook(id, callback) {
-	$.getJSON('book.json?id=' + id, callback);
+	$.getJSON('/api/book.json?id=' + id, callback);
 }
 
 function getCurrentUser(callback) {
-	$.getJSON('user.json', callback);
+	$.getJSON('/api/user.json', callback);
 }
 
 function getDashboard(callback) {
-	$.getJSON('dashboard.json', callback);
+	$.getJSON('/api/dashboard.json', callback);
 }
