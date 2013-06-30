@@ -1,17 +1,11 @@
 ---
 ru:
-  web:
-    admin:
-      books:
-        index:
-          listing_books: ''
-          actions: ''
-          edit: ''
-          destroy: ''
-        new:
-          new_book: ''
-  helpers:
-    actions: ''
-    links:
-      destroy: ''
-      new: ''
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            login:
+              blank: ''
+      messages:
+        record_invalid: ''
