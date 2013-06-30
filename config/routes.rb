@@ -14,7 +14,7 @@ Library::Application.routes.draw do
       root to: 'welcome#index'
 
       resources :users
-      resources :books, only: [:index, :update, :edit, :show, :new, :create, :destroy] do
+      resources :books do
         collection do
           get 'tagged'
         end

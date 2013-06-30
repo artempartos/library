@@ -6,6 +6,9 @@ class Web::Admin::BooksController < Web::Admin::ApplicationController
 
   def edit
     @book = Book.find(params[:id])
+    puts @book.image.file
+    @book.build_image unless @book.image
+    @book.build_e_book unless @book.e_book
   end
 
   def update
@@ -15,6 +18,8 @@ class Web::Admin::BooksController < Web::Admin::ApplicationController
       redirect_to edit_admin_book_path(@book)
     else
       f(:error)
+      @book.build_image unless @book.image
+      @book.build_e_book unless @book.e_book
       render :edit
     end
   end
@@ -27,14 +32,6 @@ class Web::Admin::BooksController < Web::Admin::ApplicationController
     @book = Book.new
     @book.build_image
     @book.build_e_book
-  end
-
-  def edit
-    @book = Book.find(params[:id])
-  end
-
-  def show
-    @book = Book.find(params[:id])
   end
 
   def create
