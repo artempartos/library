@@ -22,8 +22,7 @@ ru:
       book:
         create: 'Добавить книгу'
         cancel: 'Добавить книгу'
-      user:
-        create: 'Зарегистрироваться'
+
   flash:
     web:
       sessions:
@@ -44,6 +43,7 @@ ru:
           attributes:
             password:
               user_or_password_invalid: 'Email или пароль неверны'
+<<<<<<< HEAD
   simple_form:
     labels:
       book:
@@ -52,13 +52,6 @@ ru:
         isbn: 'ISBN'
         year: 'Год издания'
         pages: 'Количество страниц'
-      user:
-        email: 'E-mail'
-        password: 'Пароль'
-        user: 'Зарегистрироваться'
-      company:
-        company: 'Создать компанию:'
-        name: 'Имя компании'
   web:
     books:
       author: 'Автор'
@@ -69,9 +62,7 @@ ru:
         new_book: 'Добавить книгу'
       form:
         author: 'Автор'
-    users:
-      new:
-        new_user: 'Зарегистрироваться'
+=======
   activerecord:
     errors:
       models:
@@ -79,4 +70,5 @@ ru:
           attributes:
             email:
               taken: 'Пользователь с таким email уже существует'
+>>>>>>> 1968b21f451584f8ef48be718ebdbcd730ef81bc
 
