@@ -6,7 +6,7 @@ json.array! @books do |book|
   json.isbn book.isbn
   json.pages book.pages
   if book.image
-    json.image book.image.file
+    json.image book.image.file.url
   end
   json.tags book.tag_list
   if book.holder_id
