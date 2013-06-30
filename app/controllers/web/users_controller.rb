@@ -3,6 +3,7 @@ class Web::UsersController < Web::ApplicationController
 
   def new
     @user = User.new
+    @user.build_company
   end
 
   def create
