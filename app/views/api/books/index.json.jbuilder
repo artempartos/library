@@ -10,7 +10,7 @@ json.array! @books do |book|
   end
   json.tags book.tag_list
   if book.holder_id
-    json.holder book.holder
+    json.holder book.holder.login
   end
   json.pages book.pages
   json.comments book.comments, :id, :text, :user_id, :book_id
