@@ -68,11 +68,17 @@ function showDashboard() {
 	getDashboard(drawDashboard);
 }
 
-function holdBook(id) {
+function holdBook(id, onBookPage) {
 	$.ajax({
 		type: "PUT",
 		url: "/api/book?id=" + id}).done(function (msg) {
-			showBook(id);
+			clearCache();
+
+			if (onBookPage) {
+				showBook(id);
+			} else {
+				showBooks(loanBookFilter);
+			}
 		});
 }
 
@@ -144,4 +150,8 @@ function getCurrentUser(callback) {
 
 function getDashboard(callback) {
 	$.getJSON('/api/dashboard.json', callback);
+}
+
+function clearCache() {
+	window.localStorage.setItem("books-cache", "");
 }
