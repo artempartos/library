@@ -11,6 +11,7 @@ class Api::BooksController < Api::ApplicationController
     @book = Book.find(params[:id])
     @book.holder = current_user
     @book.save
+    @book.rent
     respond_with @book
   end
 end
