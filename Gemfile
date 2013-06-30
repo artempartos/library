@@ -40,6 +40,7 @@ group :development, :test do
   gem 'factory_girl_rails'
 end
 
+gem 'acts-as-taggable-on'
 gem 'jquery-rails'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'

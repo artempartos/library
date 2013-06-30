@@ -1,10 +1,12 @@
 class Book < ActiveRecord::Base
-  attr_accessible :author, :isbn, :title, :year, :pages, :image, :image_attributes
+  attr_accessible :author, :isbn, :title, :year, :pages, :image, :image_attributes, :tag_list
   has_many :comments, dependent: :destroy, inverse_of: :book
   has_one :image, dependent: :destroy, inverse_of: :book
   include BookRepository
 
   belongs_to :holder, class_name: User
+  has_and_belongs_to_many :tags
+  acts_as_taggable_on :tags
 
   validates :author, presence: true
   validates :isbn, presence: true, uniqueness: true
