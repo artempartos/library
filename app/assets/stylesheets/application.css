@@ -51,6 +51,10 @@ div .jumbotron {
     z-index: 10;
 }
 
+#cara img {
+    width: 100%;;
+}
+
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
