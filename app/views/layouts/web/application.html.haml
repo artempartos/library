@@ -11,9 +11,7 @@
       = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
     = stylesheet_link_tag "application", :media => "all"
   %body
-    .collapse.navbar-collapse.navbar-ex1-collapse
-      %nav.navbar.navbar-default.navbar-fixed-top
-        = render 'layouts/web/shared/nav'
+    = render 'layouts/web/shared/nav'
     .container
       .content
         .row
