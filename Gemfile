@@ -7,7 +7,6 @@ gem 'pg'
 gem 'puma'
 gem 'draper'
 gem 'carrierwave'
-gem "fog", "~> 1.3.1"
 gem 'mini_magick'
 gem 'cocoon'
 
@@ -53,7 +52,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 
 group :test do
-  gem "rake"
+  gem 'rake'
   gem 'minitest'
   gem 'simplecov'
   gem 'ci_reporter'
@@ -77,3 +76,8 @@ end
 group :doc do
   gem 'sdoc', require: false
 end
+
+group :production do
+  gem 'rails_12factor'
+end
+
