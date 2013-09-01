@@ -6,4 +6,5 @@ env:
 script:
   - RAILS_ENV=test bundle exec rake --trace db:migrate test
 before_script:
+  - cp config/database.yml.sample config/database.yml
   - psql -c 'create database library_test' -U postgres
