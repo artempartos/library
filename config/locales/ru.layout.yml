@@ -1,0 +1,8 @@
+ru:
+  layouts:
+    web:
+      shared:
+        nav:
+          library: "Библиотека"
+          books: "Книги"
+          people: "Люди"
