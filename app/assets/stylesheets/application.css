@@ -14,3 +14,59 @@
  *= require_self
  *= require_tree .
  */
+
+
+.navbar {
+    margin-bottom: 30px;
+}
+
+
+body {
+    /*padding-bottom: 40px;*/
+    color: #5a5a5a;
+}
+
+body {
+    padding-top: 70px;
+    padding-bottom: 0px;
+}
+
+div .jumbotron {
+    margin-bottom: 0px;
+    margin-up: 0px;
+}
+
+
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
+    position: absolute;
+    margin-top: 20px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+
+    /* The navbar becomes detached from the top, so we round the corners */
+    /* Bump up size of carousel content */
+    .carousel-caption p {
+        margin-bottom: 20px;
+        font-size: 21px;
+        line-height: 1.4;
+    }
+
+}
