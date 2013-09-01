@@ -66,6 +66,7 @@ group :development do
   gem 'capistrano'
   gem 'capistrano-ext'
   gem 'rvm-capistrano'
+  gem 'cape'
 end
 
 group :test, :development do
