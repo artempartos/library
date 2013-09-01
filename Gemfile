@@ -52,6 +52,7 @@ group :test do
   gem 'rake'
   gem 'minitest'
   gem 'simplecov'
+  gem 'coveralls', require: false
   gem 'ci_reporter'
 end
 
