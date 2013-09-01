@@ -29,7 +29,6 @@ gem 'compass-rails', github: 'milgner/compass-rails', branch: 'rails4'
 gem 'js-routes'
 gem 'whenever'
 gem 'backup'
-gem 'exceptional'
 
 gem 'redcarpet'
 gem 'wrong'
@@ -48,8 +47,6 @@ gem 'authority'
 gem 'ransack'
 gem 'kaminari'
 gem 'enumerize'
-gem 'omniauth'
-gem 'omniauth-facebook'
 
 group :test do
   gem 'rake'
