@@ -17,3 +17,6 @@ application up and running.
   bin/rails s
 ```
 
+## [Contribute to this project](/TODO.md) 
+
+
