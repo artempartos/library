@@ -28,7 +28,6 @@ gem 'chosen-rails'
 gem 'compass-rails', github: 'milgner/compass-rails', branch: 'rails4'
 gem 'js-routes'
 gem 'whenever'
-gem 'backup'
 
 gem 'redcarpet'
 gem 'wrong'
