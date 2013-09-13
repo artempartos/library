@@ -1,4 +1,5 @@
 class Web::SessionsController < Web::ApplicationController
+
   def new
     @session = UserSignInType.new
   end

@@ -15,4 +15,5 @@ class ActiveSupport::TestCase
   ActiveRecord::Migration.check_pending!
 
   include FactoryGirl::Syntax::Methods
+  include Concerns::AuthManagment
 end

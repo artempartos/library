@@ -8,5 +8,9 @@ FactoryGirl.define do
     last_name
     email
     login
+
+    after(:build) do |u|
+      u.confirm
+    end
   end
 end
