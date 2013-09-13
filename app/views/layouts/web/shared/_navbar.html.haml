@@ -1,0 +1,7 @@
+#top-nav.navbar-big
+  = nav_bar fixed: :top, brand: t('.brand'), responsive: true do
+    = menu_group do
+      = menu_item t('.home'), root_path
+
+    = menu_group pull: :right do 
+      = menu_item t('.logout'), "#"
