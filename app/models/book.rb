@@ -1,7 +1,5 @@
 class Book < ActiveRecord::Base
 
-
-
   state_machine :state, initial: :draft do
     state :published
     state :unpublished
