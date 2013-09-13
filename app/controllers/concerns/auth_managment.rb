@@ -17,17 +17,12 @@ module Concerns
     end
 
     def current_user
-      @_current_user ||= User.active.where(id: session[:user_id]).first
+      @_current_user ||= User.active.where(id: session[:user_id]).first || Guest.new
     end
 
     def decorated_user
       @_decorated_user ||= current_user.try :decorate
     end
 
-    def required_basic_auth!
-      authenticate_or_request_with_http_basic do |user, password|
-        user == configus.basic_auth.username && password == configus.basic_auth.password
-      end
-    end
   end
 end
