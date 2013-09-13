@@ -1,6 +1,13 @@
 class Company < ActiveRecord::Base
   include Authority::Abilities
 
+  belongs_to :creator, class_name: User
+
+  has_many :user_company_relationships, dependent: :destroy
+  has_many :employees,                  through: :user_company_relationships, source: :user
+
+  validates :creator, presence: true
+
   mount_uploader :logo, LogoUploader
 
   state_machine :state, initial: :active do

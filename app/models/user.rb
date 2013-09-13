@@ -4,24 +4,28 @@ class User < ActiveRecord::Base
 
   has_secure_password validations: false
 
-  validates :email, uniqueness: true, presence: true, email: true
-  validates :first_name, presence: true
-  validates :last_name, presence: true
+  has_many :own_companies,              dependent: :destroy, foreign_key: :creator_id
+  has_many :user_company_relationships, dependent: :destroy
+  has_many :companies,                  through: :user_company_relationships
+
+  validates :email,           presence: true, uniqueness: true, email: true
+  validates :first_name,      presence: true
+  validates :last_name,       presence: true
   validates :password_digest, presence: true
 
   mount_uploader :avatar, AvatarUploader
 
   state_machine initial: :waiting_confirmation do
     state :waiting_confirmation
-    state :inactive
+    state :banned
     state :active
 
     event :confirm do
-      transition [:waiting_confirmation, :inactive] => :active
+      transition [:waiting_confirmation, :banned] => :active
     end
 
-    event :deactivate do
-      transition [:waiting_confirmation, :active] => :inactive
+    event :ban do
+      transition [:waiting_confirmation, :active] => :banned
     end
 
   end
