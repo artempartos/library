@@ -9,7 +9,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string :confirmation_token
       t.string :reset_password_token
       t.string :avatar
-      t.integer :user_company_relationship_id
       t.string :login
 
       t.timestamps
