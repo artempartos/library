@@ -46,6 +46,7 @@ gem 'authority'
 gem 'ransack'
 gem 'kaminari'
 gem 'enumerize'
+gem 'carrierwave'
 
 group :test do
   gem 'rake'
