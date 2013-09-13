@@ -8,7 +8,7 @@ Authority.configure do |config|
   #
   # Default is:
   #
-  # config.user_method = :current_user
+  config.user_method = :current_user
 
   # CONTROLLER_ACTION_MAP
   # =====================
@@ -20,15 +20,15 @@ Authority.configure do |config|
   #
   # Defaults are as follows:
   #
-  # config.controller_action_map = {
-  #   :index   => 'read',
-  #   :show    => 'read',
-  #   :new     => 'create',
-  #   :create  => 'create',
-  #   :edit    => 'update',
-  #   :update  => 'update',
-  #   :destroy => 'delete'
-  # }
+  config.controller_action_map = {
+    :index   => 'read',
+    :show    => 'read',
+    :new     => 'create',
+    :create  => 'create',
+    :edit    => 'update',
+    :update  => 'update',
+    :destroy => 'delete'
+  }
 
   # ABILITIES
   # =========
@@ -38,12 +38,14 @@ Authority.configure do |config|
   #
   # Defaults are as follows:
   #
-  # config.abilities =  {
-  #   :create => 'creatable',
-  #   :read   => 'readable',
-  #   :update => 'updatable',
-  #   :delete => 'deletable'
-  # }
+  config.abilities =  {
+    :create => 'creatable',
+    :read   => 'readable',
+    :update => 'updatable',
+    :delete => 'deletable',
+    :subscribe => 'subscribable',
+    :manage => 'managable'
+  }
 
   # LOGGER
   # ======
