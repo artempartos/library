@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  include Authority::UserAbilities
   include UserRepository
 
   has_secure_password validations: false
