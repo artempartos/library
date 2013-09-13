@@ -8,6 +8,5 @@ FactoryGirl.define do
     book_cover "MyString"
     year 1
     isbn "MyString"
-    state "MyString"
   end
 end
