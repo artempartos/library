@@ -2,6 +2,7 @@ set :application, 'library'
 
 set :rvm_type, :system
 #set :rvm_ruby_string, 'ruby-1.9.3-p327@default'
+set :whenever_command, "bundle exec whenever" # update crontab
 
 set :stages, %w(production)
 set :default_stage, "production"
@@ -26,6 +27,13 @@ namespace :deploy do
   task :symlink_db, roles: :app do
     run "ln -nfs #{release_path}/config/database.sample.yml #{release_path}/config/database.yml"
   end
+
+  desc "Seed database data"
+  task :db_seed do
+    run "cd #{current_path} && RAILS_ENV=#{rails_env} #{rake} db:seed"
+  end
 end
 
-before 'deploy:finalize_update', 'deploy:symlink_db'
+after "deploy:finalize_update", "deploy:symlink_db"
+after "deploy:restart", "unicorn:stop"
+after "deploy:update", "deploy:cleanup"
