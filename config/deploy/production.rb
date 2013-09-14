@@ -6,7 +6,7 @@ role :db,  "62.76.184.163", primary: true
 
 set :rails_env, "production"
 set :user, 'library_production'
-set :branch, 'master'
+set :branch, 'develop'
 
 set :whenever_command, "bundle exec whenever"
 require "whenever/capistrano"
