@@ -1,0 +1,5 @@
+ru:
+  helpers:
+    submit:
+      book:
+        create: "Создать книгу"
