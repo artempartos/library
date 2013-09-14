@@ -2,10 +2,12 @@ ru:
   layouts:
     web:
       shared:
-        nav:
-          library: "Библиотека"
+        navbar:
+          brand: "CoLibrary"
           books: "Книги"
           people: "Люди"
+          home: "На главную"
+          logout: "Выйти"
   web:
     welcome:
       index:

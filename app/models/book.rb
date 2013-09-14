@@ -1,6 +1,7 @@
 class Book < ActiveRecord::Base
 
-
+  # FIXME change :book_cover to :cover
+  mount_uploader :book_cover, CoverUploader
 
   state_machine :state, initial: :draft do
     state :published
@@ -20,4 +21,7 @@ class Book < ActiveRecord::Base
 
   include BookRepository
 
+  def to_s
+    name
+  end
 end

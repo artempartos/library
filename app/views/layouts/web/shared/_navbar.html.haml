@@ -2,6 +2,7 @@
   = nav_bar fixed: :top, brand: t('.brand'), responsive: true do
     = menu_group do
       = menu_item t('.home'), root_path
+      = menu_item t('.books'), books_path #FIXME too big font
 
-    = menu_group pull: :right do 
+    = menu_group pull: :right do
       = menu_item t('.logout'), "#"
