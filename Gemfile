@@ -42,7 +42,6 @@ gem 'term-ansicolor'
 gem 'virtus'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'simple_form', github: "plataformatec/simple_form"
-gem 'rails_12factor'
 gem 'usefull_scopes', git: 'https://github.com/kaize/usefull_scopes.git'
 gem 'validates'
 gem 'authority'
@@ -79,8 +78,4 @@ end
 
 group :doc do
   gem 'sdoc', require: false
-end
-
-group :production do
-  gem 'rails_12factor'
 end
