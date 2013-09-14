@@ -1,0 +1,38 @@
+%h2
+  = @book
+.row
+  .span4
+    %figure
+      -# FIXME use cover instead of book_cover
+      = image_tag @book.book_cover.thumb
+  .span8
+    %table.table.table-striped
+      %tr
+        %td= han(:book, :author)
+        %td= @book.author
+      %tr
+        %td= han(:book, :year)
+        %td= @book.year
+      %tr
+        %td= han(:book, :isbn)
+        %td= @book.isbn
+      %tr
+        %td
+        %td
+          -# FIXME use authority
+          / - if @course.subscription_allowed?
+          /   - if signed_in?
+          /     - if @course.members.include?(current_user)
+          = button_to t('.unsubscribe'), "", class: 'btn' #, method: 'delete'
+          /     - else
+          = button_to t('.subscribe'), "", class: 'btn'#, method: 'post'
+          /   - else
+          /     = button_to t('.subscribe'), new_session_url(subdomain: false, from: company_courses_url),
+          /       class: 'btn', method: 'get'
+          = button_to t('.edit'), edit_book_path(@book), method: 'get', class: 'btn'
+- if @book.description?
+  .panel.panel-default
+    .panel-heading
+      %h4= t('.description')
+    .panel-body
+      = @book.description

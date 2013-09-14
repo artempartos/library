@@ -1,0 +1,46 @@
+#top-nav {
+  &.navbar-big .navbar-inner {
+    height: 230px;
+
+    .brand {
+      line-height: 230px;
+      -webkit-transition: line-height 0.3s;
+      -moz-transition: line-height 0.3s;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 4em;
+    }
+
+    ul {
+      -webkit-transition: height 0.3s;
+      -moz-transition: height 0.3s;
+      margin-top: 110px;
+      li.active {
+
+        a {
+          background: none;
+          box-shadow: none;
+          text-decoration: underline;
+          color: #aaa;
+          font-weight: 700;
+          margin: 0 0 0 20px;
+          font-size: 1.4em;
+        }
+      }
+    }
+
+  }
+
+  .navbar-inner {
+    background: #f6f6f6;
+    -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+
+    .brand {
+      color: #47a3da;
+    }
+
+  }
+
+
+}

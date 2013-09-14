@@ -1,4 +1,4 @@
-ruby '2.0.0'
+#encoding: utf-8
 
 source 'https://rubygems.org'
 
@@ -10,8 +10,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'cocoon'
 
-gem 'less-rails-bootstrap'
-gem 'twitter-bootstrap-rails', github: "seyhunak/twitter-bootstrap-rails", branch: "bootstrap3"
+gem 'twitter-bootstrap-rails'
 
 gem 'active_model_serializers'
 
@@ -28,7 +27,7 @@ gem 'chosen-rails'
 gem 'compass-rails', github: 'milgner/compass-rails', branch: 'rails4'
 gem 'js-routes'
 gem 'whenever'
-
+gem 'backup'
 gem 'redcarpet'
 gem 'wrong'
 gem 'configus'
@@ -46,6 +45,8 @@ gem 'authority'
 gem 'ransack'
 gem 'kaminari'
 gem 'enumerize'
+gem 'carrierwave'
+gem 'mini_magick'
 
 group :test do
   gem 'rake'

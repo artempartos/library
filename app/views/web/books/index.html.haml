@@ -1,0 +1,17 @@
+%ul.thumbnails
+  - @books.each do |book|
+    %li.span4
+      = link_to image_tag(book.book_cover.thumb, data: { src: "holder.js/300x200" }, alt: ""), book_path(book), class: "thumbnail"
+      .caption
+        %h3
+          = book.name
+        %h5
+          = book.author
+        %p
+          = book.description
+        %p
+          = button_to t('.show'), book_path(book), method: 'get', class: 'btn btn-primary'
+          -# FIXME use authority for access to edit action
+          = button_to t('.edit'), edit_book_path(book), method: 'get', class: 'btn'
+
+= link_to t('.add_book'), new_book_path, method: 'get', class: 'btn btn-primary'
