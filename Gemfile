@@ -1,5 +1,3 @@
-#encoding: utf-8
-
 source 'https://rubygems.org'
 
 gem 'rails', '>= 4.0.0'
@@ -80,4 +78,3 @@ end
 group :production do
   gem 'rails_12factor'
 end
-
