@@ -3,3 +3,7 @@ ru:
     submit:
       book:
         create: "Создать книгу"
+        update: "Обновить книгу"
+      company:
+        create: "Создать компанию"
+        update: "Обновить компанию"

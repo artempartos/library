@@ -5,7 +5,8 @@ ru:
 
   activerecord:
     models:
-      book: Книга
+      book: "Книга"
+      company: "Компания"
 
     attributes:
       book:
@@ -15,3 +16,7 @@ ru:
         description: "Описание"
         year: "Год"
         isbn: "ISBN"
+
+      company:
+        name: "Название компании"
+        logo: "Логотип компании"
