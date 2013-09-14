@@ -4,9 +4,10 @@ load 'deploy'
 
 require 'bundler/capistrano'
 require 'rvm/capistrano'
-require 'capistrano-unicorn'
-load 'deploy/assets'
-load 'config/deploy'
+#load 'deploy/assets'
 
 # Loads custom tasks from `lib/capistrano/tasks' if you have any defined.
 Dir.glob('lib/capistrano/tasks/*.cap').each { |r| import r }
+load 'config/deploy'
+
+require 'capistrano-unicorn'
