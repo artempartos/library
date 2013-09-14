@@ -6,9 +6,4 @@ class Web::ApplicationController < ApplicationController
     redirect_to params[:from] || default
   end
 
-  private
-  def resource_book
-    Book.find(params[:id])
-  end
-
 end

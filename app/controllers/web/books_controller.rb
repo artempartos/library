@@ -43,4 +43,9 @@ class Web::BooksController < Web::ApplicationController
     @book.unpublish
     redirect_to books_path
   end
+
+  private
+  def resource_book
+    Book.find(params[:id])
+  end
 end
