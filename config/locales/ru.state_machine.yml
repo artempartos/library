@@ -1,0 +1,20 @@
+ru:
+  activerecord:
+    state_machines:
+      states:
+        published: Опубликовано
+        active: активно
+        inactive: неактивно
+      events:
+        publish: Опубликовать
+        activate: Активировать
+
+      book:
+        state:
+          states:
+            published: Опубликована
+            unpublished: Неопубликована
+            draft: Черновик
+          events:
+            unpublish: Скрыть
+            to_draft: В черновики

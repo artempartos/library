@@ -1,0 +1,11 @@
+= f.input :state_event, as: :state_event
+= f.input :book_cover
+= f.input :name
+= f.input :author
+= f.input :description
+= f.input :year
+= f.input :isbn
+
+.form-actions
+  = f.submit class: 'btn btn-primary'
+  = link_to t('.cancel'), root_path, class: 'btn'
