@@ -3,6 +3,9 @@ Library::Application.routes.draw do
     root to: "welcome#index"
   end
 
+  scope module: :web do
+    resources :companies
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
