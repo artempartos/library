@@ -1,9 +1,12 @@
-class LogoUploader < CarrierWave::Uploader::Base
+class LogoUploader < BaseUploader
+  process :resize_to_fit => [200, 200]
 
-  storage :file
+  version :thumb do
+    process :resize_to_fill => [30,30]
+  end
 
-  def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+  def extension_white_list
+     %w(jpg jpeg gif png)
   end
 
 end
