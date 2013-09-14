@@ -16,7 +16,7 @@ class Web::CompaniesController < Web::ApplicationController
 
   def create
     @company = ::CompanyEditType.new params[:company]
-    #TODO @company.creator = current_user
+    @company.creator = current_user
 
     if @company.save
       f(:success)
