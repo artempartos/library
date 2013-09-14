@@ -1,0 +1,22 @@
+ru:
+  attributes:
+    state_event: "Изменить состояние"
+    state: "Состояние"
+
+  activerecord:
+    models:
+      book: "Книга"
+      company: "Компания"
+
+    attributes:
+      book:
+        name: "Наименование"
+        book_cover: "Обложка"
+        author: "Автор"
+        description: "Описание"
+        year: "Год"
+        isbn: "ISBN"
+
+      company:
+        name: "Название компании"
+        logo: "Логотип компании"

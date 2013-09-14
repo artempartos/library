@@ -1,0 +1,16 @@
+ru:
+  web:
+    books:
+      form:
+        cancel: "Отменить"
+      show:
+        unsubscribe: "Отписаться"
+        subscribe: "Подписаться"
+        edit: "Редактировать"
+      index:
+        show: "Просмотреть"
+        edit: "Редактировать"
+        add_book: "Добавить книгу"
+    companies:
+      index:
+        add_company: "Добавить компанию"

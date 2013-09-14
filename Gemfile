@@ -1,4 +1,7 @@
-ruby '2.0.0'
+if RUBY_VERSION =~ /1.9/
+  Encoding.default_external = Encoding::UTF_8
+  Encoding.default_internal = Encoding::UTF_8
+end
 
 source 'https://rubygems.org'
 
@@ -9,9 +12,9 @@ gem 'draper'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'cocoon'
+gem 'unicorn'
 
-gem 'less-rails-bootstrap'
-gem 'twitter-bootstrap-rails', github: "seyhunak/twitter-bootstrap-rails", branch: "bootstrap3"
+gem 'twitter-bootstrap-rails'
 
 gem 'active_model_serializers'
 
@@ -28,7 +31,7 @@ gem 'chosen-rails'
 gem 'compass-rails', github: 'milgner/compass-rails', branch: 'rails4'
 gem 'js-routes'
 gem 'whenever'
-
+gem 'backup'
 gem 'redcarpet'
 gem 'wrong'
 gem 'configus'
@@ -37,7 +40,7 @@ gem 'validates'
 gem 'state_machine'
 gem 'term-ansicolor'
 gem 'virtus'
-gem 'bcrypt-ruby'
+gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'simple_form', github: "plataformatec/simple_form"
 gem 'rails_12factor'
 gem 'usefull_scopes', git: 'https://github.com/kaize/usefull_scopes.git'
@@ -47,6 +50,7 @@ gem 'ransack'
 gem 'kaminari'
 gem 'enumerize'
 gem 'carrierwave'
+gem 'mini_magick'
 
 group :test do
   gem 'rake'
@@ -63,6 +67,7 @@ group :development do
   gem 'spring'
   gem 'capistrano'
   gem 'capistrano-ext'
+  gem 'capistrano-unicorn', require: false
   gem 'rvm-capistrano'
   gem 'cape'
 end
@@ -79,4 +84,3 @@ end
 group :production do
   gem 'rails_12factor'
 end
-

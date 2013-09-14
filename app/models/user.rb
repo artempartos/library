@@ -1,8 +1,9 @@
 class User < ActiveRecord::Base
   include Authority::UserAbilities
-  include UserRepository
 
   has_secure_password validations: false
+
+  has_one :library, as: :librariable, class_name: BookLibrary
 
   has_many :own_companies,              dependent: :destroy, foreign_key: :creator_id
   has_many :user_company_relationships, dependent: :destroy
@@ -30,6 +31,8 @@ class User < ActiveRecord::Base
 
   end
 
+  include UserRepository
+
   def generate_confirmation_token
     self.confirmation_token = SecureHelper.generate_token
   end
@@ -40,6 +43,10 @@ class User < ActiveRecord::Base
 
   def can_reset_password?
     active?
+  end
+
+  def guest?
+    false
   end
 
   def to_s

@@ -5,6 +5,11 @@ Configus.build Rails.env do
       storage :file
     end
 
+    host 'colibrary.io'
+    mailer do
+      from "noreply@colibrary.io"
+    end
+
   end
 
   env :development, parent: :production do
