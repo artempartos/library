@@ -11,11 +11,11 @@ class Web::CompaniesController < Web::ApplicationController
   end
 
   def new
-    @company = ::Company::CompanyEditType.new
+    @company = ::CompanyEditType.new
   end
 
   def create
-    @company = ::Company::CompanyEditType.new params[:company]
+    @company = ::CompanyEditType.new params[:company]
     #TODO @company.creator = current_user
 
     if @company.save
@@ -33,7 +33,7 @@ class Web::CompaniesController < Web::ApplicationController
 
   def update
     @company = Company.find(params[:id])
-    @company = @company.becomes ::Company::CompanyEditType
+    @company = @company.becomes ::CompanyEditType
     if @company.update(params[:company])
       f(:success)
       redirect_to company_path @company
