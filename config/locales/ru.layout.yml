@@ -5,6 +5,7 @@ ru:
         navbar:
           brand: "CoLibrary"
           books: "Книги"
+          companies: "Компании"
           people: "Люди"
           home: "На главную"
           logout: "Выйти"

@@ -11,3 +11,6 @@ ru:
         show: "Просмотреть"
         edit: "Редактировать"
         add_book: "Добавить книгу"
+    companies:
+      index:
+        add_company: "Добавить компанию"

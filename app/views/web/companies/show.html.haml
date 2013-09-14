@@ -1,1 +1,2 @@
 %h1= @company.name
+= image_tag @company.logo.url if  @company.logo.present?
