@@ -3,6 +3,7 @@
     = menu_group do
       = menu_item t('.home'), root_path
       = menu_item t('.books'), books_path #FIXME too big font
+      = menu_item t('.companies'), companies_path
 
     = menu_group pull: :right do
       = menu_item t('.logout'), "#"
