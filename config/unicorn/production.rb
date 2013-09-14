@@ -1,6 +1,6 @@
 # coding: UTF-8
 
-APP_PATH = "/u/apps/impz73"
+APP_PATH = "/u/apps/library"
 
 # Sample verbose configuration file for Unicorn (not Rack)
 #
