@@ -1,0 +1,2 @@
+%p Ваш почтовый ящик был указан при регистрации на сайте #{link_to configus.host, root_url}.
+%p Пожалуйста, подтвердите вашу регистрацию, пройдя по #{link_to 'ссылке', confirm_user_url(@user, confirmation_token: @user.confirmation_token)}
