@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   has_secure_password validations: false
 
+  has_one :library, as: :librariable, class_name: 'BookLibrary'
+
   validates :email, uniqueness: true, presence: true, email: true
   validates :first_name, presence: true
   validates :last_name, presence: true
