@@ -1,8 +1,3 @@
-if RUBY_VERSION =~ /1.9/
-  Encoding.default_external = Encoding::UTF_8
-  Encoding.default_internal = Encoding::UTF_8
-end
-
 source 'https://rubygems.org'
 
 gem 'rails', '>= 4.0.0'
@@ -14,8 +9,7 @@ gem 'mini_magick'
 gem 'cocoon'
 gem 'unicorn'
 
-gem 'less-rails-bootstrap'
-gem 'twitter-bootstrap-rails', github: "seyhunak/twitter-bootstrap-rails", branch: "bootstrap3"
+gem 'twitter-bootstrap-rails'
 
 gem 'active_model_serializers'
 
@@ -42,7 +36,7 @@ gem 'state_machine'
 gem 'term-ansicolor'
 gem 'virtus'
 gem 'bcrypt-ruby', '~> 3.0.0'
-gem 'simple_form'
+gem 'simple_form', github: "plataformatec/simple_form"
 gem 'rails_12factor'
 gem 'usefull_scopes', git: 'https://github.com/kaize/usefull_scopes.git'
 gem 'validates'
