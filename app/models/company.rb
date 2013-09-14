@@ -1,6 +1,8 @@
 class Company < ActiveRecord::Base
-  attr_accessor :name, :logo
-  mount_uploader :logo, LogoUploader
+
+  validates :name, presence: true
+
+  mount_uploader :logo, ::LogoUploader
 
   state_machine :state, initial: :active do
     state :active
@@ -13,7 +15,8 @@ class Company < ActiveRecord::Base
     event :suspend do
       transition any - [:suspended] => :suspended
     end
-
   end
+
+  include CompanyRepository
 
 end

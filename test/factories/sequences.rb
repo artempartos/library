@@ -1,5 +1,9 @@
 FactoryGirl.define do
 
+  sequence :order do |n|
+    n
+  end
+
   sequence :string do |n|
     "string#{n}"
   end
@@ -23,10 +27,6 @@ FactoryGirl.define do
 
   sequence :integer do |n|
     n
-  end
-
-  sequence :password do |n|
-    "email_#{n}@mail.com"
   end
 
   sequence :email do |n|
