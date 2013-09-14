@@ -12,6 +12,7 @@ gem 'draper'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'cocoon'
+gem 'unicorn'
 
 gem 'less-rails-bootstrap'
 gem 'twitter-bootstrap-rails', github: "seyhunak/twitter-bootstrap-rails", branch: "bootstrap3"
@@ -67,6 +68,7 @@ group :development do
   gem 'spring'
   gem 'capistrano'
   gem 'capistrano-ext'
+  gem 'capistrano-unicorn', require: false
   gem 'rvm-capistrano'
   gem 'cape'
 end

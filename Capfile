@@ -4,7 +4,7 @@ load 'deploy'
 
 require 'bundler/capistrano'
 require 'rvm/capistrano'
-require 'puma/capistrano'
+require 'capistrano-unicorn'
 load 'deploy/assets'
 load 'config/deploy'
 
