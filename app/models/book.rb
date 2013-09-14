@@ -1,4 +1,5 @@
 class Book < ActiveRecord::Base
+  include Authority::Abilities
 
   # FIXME change :book_cover to :cover
   mount_uploader :book_cover, CoverUploader

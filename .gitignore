@@ -12,6 +12,8 @@
 /db/*.sqlite3-journal
 /db/schema.rb
 
+/public/assets
+
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
@@ -32,6 +34,7 @@ capybara-*.html
 /public/system/*
 /coverage/
 /spec/tmp/*
+/public/uploads/*
 **.orig
 rerun.txt
 pickle-email-*.html

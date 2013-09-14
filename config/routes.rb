@@ -3,7 +3,11 @@ Library::Application.routes.draw do
     root to: "welcome#index"
     resources :companies
     resources :books
-    resources :users
+    resources :users do
+      member do
+        get :confirm
+      end
+    end
     resource :session, only: [:new, :create, :destroy]
   end
 

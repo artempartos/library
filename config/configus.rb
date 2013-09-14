@@ -5,9 +5,9 @@ Configus.build Rails.env do
       storage :file
     end
 
-    host 'colibrary.ru'
+    host 'colibrary.io'
     mailer do
-      from "noreply@colibrary.ru"
+      from "noreply@colibrary.io"
     end
 
   end

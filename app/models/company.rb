@@ -1,7 +1,15 @@
 class Company < ActiveRecord::Base
-  has_one :library, as: :librariable, class_name: 'BookLibrary'
+  include Authority::Abilities
+
+  belongs_to :creator, class_name: User
+
+  has_one :library, as: :librariable, class_name: BookLibrary
+
+  has_many :user_company_relationships, dependent: :destroy
+  has_many :employees,                  through: :user_company_relationships, source: :user
 
   validates :name, presence: true
+  validates :creator, presence: true
 
   mount_uploader :logo, ::LogoUploader
 
@@ -19,5 +27,4 @@ class Company < ActiveRecord::Base
   end
 
   include CompanyRepository
-
 end
