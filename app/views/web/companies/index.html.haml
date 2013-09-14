@@ -1,0 +1,14 @@
+= paginate @companies
+
+%table.table.table-stripped
+  %thead
+    %tr
+      %th= sort_link(@q, :id)
+      %th= Company.human_attribute_name :logo
+      %th= sort_link(@q, :name)
+  %tbody
+    - @companies.each do |c|
+      %tr
+        %td= c.id
+        %td= image_tag c.logo.thumb.url
+        %td= link_to c.name, c
