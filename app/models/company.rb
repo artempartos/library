@@ -1,4 +1,5 @@
 class Company < ActiveRecord::Base
+  has_one :library, as: :librariable, class_name: 'BookLibrary'
 
   validates :name, presence: true
 
