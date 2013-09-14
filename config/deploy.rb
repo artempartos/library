@@ -1,7 +1,7 @@
 set :application, 'library'
 
-#set :rvm_type, :system
-#set :rvm_ruby_string, 'ruby-1.9.3-p327@default'
+set :rvm_type, :system
+set :rvm_ruby_string, 'ruby-1.9.3-p327@default'
 #set :whenever_command, "bundle exec whenever" # update crontab
 
 set :stages, %w(production)
