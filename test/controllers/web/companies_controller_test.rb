@@ -2,6 +2,9 @@ require 'test_helper'
 
 class Web::CompaniesControllerTest < ActionController::TestCase
   setup do
+    @user = create :user
+    sign_in @user
+
     @company = create :company
     @attrs = attributes_for :company
   end

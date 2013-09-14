@@ -1,11 +1,17 @@
 class User < ActiveRecord::Base
+  include Authority::UserAbilities
+
   has_secure_password validations: false
 
-  has_one :library, as: :librariable, class_name: 'BookLibrary'
+  has_one :library, as: :librariable, class_name: BookLibrary
 
-  validates :email, uniqueness: true, presence: true, email: true
-  validates :first_name, presence: true
-  validates :last_name, presence: true
+  has_many :own_companies,              dependent: :destroy, foreign_key: :creator_id
+  has_many :user_company_relationships, dependent: :destroy
+  has_many :companies,                  through: :user_company_relationships
+
+  validates :email,           presence: true, uniqueness: true, email: true
+  validates :first_name,      presence: true
+  validates :last_name,       presence: true
   validates :password_digest, presence: true
 
   mount_uploader :avatar, AvatarUploader
@@ -19,9 +25,10 @@ class User < ActiveRecord::Base
       transition [:waiting_confirmation, :banned] => :active
     end
 
-    event :deactivate do
-      transition [:waiting_confirmation, :active] => :inactive
+    event :ban do
+      transition [:waiting_confirmation, :active] => :banned
     end
+
   end
 
   include UserRepository
