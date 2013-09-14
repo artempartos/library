@@ -1,7 +1,7 @@
 set :application, 'library'
 
 set :rvm_type, :system
-set :rvm_ruby_string, 'ruby-1.9.3-p327@default'
+#set :rvm_ruby_string, 'ruby-1.9.3-p327@default'
 #set :whenever_command, "bundle exec whenever" # update crontab
 
 set :stages, %w(production)
@@ -25,7 +25,7 @@ set :keep_releases, 5
 namespace :deploy do
   desc "Symlinks the database.yml"
   task :symlink_db, roles: :app do
-    run "ln -nfs #{release_path}/config/database.sample.yml #{release_path}/config/database.yml"
+    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
   end
 
   desc "Seed database data"
