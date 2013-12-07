@@ -1,0 +1,65 @@
+.books {
+
+  .book {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 15px;
+
+    &.no-margin {
+      margin-left: 0;
+    }
+    img {
+      width: 100%;
+      height: 280px;
+    }
+
+    .caption {
+      position: absolute;
+      bottom: -80px;
+      width: 100%;
+      background: url('<%= asset_path("gray_transparent.png") %>');
+
+      h3 {
+        font-size: 16px;
+        line-height: 16px;
+        margin-left: 10px;
+      }
+
+      h5 {
+        font-size: 12px;
+        line-height: 12px;
+        text-align: right;
+        margin-right: 10px;
+      }
+
+      .btn-line {
+        display: block;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+      }
+
+      .btn-show {
+        background: #47a3da;
+        color: white;
+        &:hover {
+          color: #fff;
+          background: #02639d;
+        }
+      }
+
+      .btn-edit {
+        background: #5bb75b;
+        color: white;
+
+        &:hover {
+          background: #5bd75b;
+        }
+      }
+    }
+
+
+
+  }
+}

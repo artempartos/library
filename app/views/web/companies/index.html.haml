@@ -1,0 +1,35 @@
+= link_to t('.add_company'), new_company_path, class: 'btn btn-primary'
+
+= paginate @companies
+
+.companies-list
+  %table.table.table-striped
+    %thead
+      %tr
+        %th= han('company', :name)
+        %th= han('company', :employees)
+        %th= han('company', :options)
+    %tbody
+      - @companies.each do |company|
+        %tr
+          %td.company-name
+            = image_tag company.logo.present? ? company.logo.thumb.url : asset_path('non_member.png')
+            = link_to company.name, company
+          %td
+            %ul.members-list
+              - company.employees.last(3).each do |member|
+                %li
+                  = link_to member do
+                    = image_tag member.avatar.present? ? member.avatar.thumb.url : asset_path('non_member.png')
+          %td.actions
+            - if company.creator == current_user
+              .btn-group.pull-right
+                = link_to company_employees_path(company), class: 'btn btn-primary', title: t('.edit_employees') do
+                  %i.icon-user
+                = link_to edit_company_path(company), class: 'btn btn-success', title: t('.edit_company') do
+                  %i.icon-edit
+                = link_to company_path(company), class: 'btn btn-danger', title: t('.destroy_company'), method: 'delete',
+                data: {confirm: t('.are_you_sure')} do
+                  %i.icon-trash
+
+= link_to t('.add_company'), new_company_path, class: 'btn btn-primary'

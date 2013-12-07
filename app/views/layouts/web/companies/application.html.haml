@@ -1,0 +1,21 @@
+!!! 5
+%html(lang="en")
+  = render 'layouts/web/shared/head'
+
+  %body.navbar-big
+    = render 'layouts/web/shared/navbar'
+
+    .container.company-layout-container
+      .row
+        .span8.block-container
+          = bootstrap_flash
+          = yield
+
+        .span3.block-container
+          = image_tag @company.logo.url if  @company.logo.present?
+
+    .container-fluid.main-container
+      = render 'layouts/web/shared/footer'
+
+
+    = javascript_include_tag 'application'

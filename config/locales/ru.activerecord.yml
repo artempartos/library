@@ -1,0 +1,41 @@
+ru:
+  attributes:
+    state_event: "Изменить состояние"
+    state: "Состояние"
+
+  activerecord:
+    models:
+      book: "Книга"
+      company: "Компания"
+      сomment: "Комментарий"
+
+    attributes:
+      book:
+        name: "Наименование"
+        book_cover: "Обложка"
+        author: "Автор"
+        description: "Описание"
+        year: "Год"
+        isbn: "ISBN"
+        tags: "Тэги"
+
+      company:
+        name: "Компания"
+        logo: "Логотип"
+        employees: "Участники"
+        options: "Опции"
+
+      user:
+        name: 'Имя'
+        options: 'Действия'
+        first_name: 'Имя'
+        last_name: 'Фамилия'
+        phone: 'Телефон'
+        avatar: 'Аватар'
+        company: 'Компания'
+        password: 'Пароль'
+        remove_avatar: 'Удалить аватар?'
+        accept_agreement: 'Пользовательское соглашение'
+        achievments: "Достижения"
+      comment:
+        comment: "Комментарий"

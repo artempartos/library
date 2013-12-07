@@ -1,0 +1,23 @@
+%h1= t '.title'
+
+.row-fluid.user-profile
+  .span5
+    = image_tag @user.avatar.url if @user.avatar.present?
+  .span7
+    %table.table.table-striped
+      %tr
+        %td= han('user', :email)
+        %td=  @user.email
+      %tr
+        %td= han('user', :name)
+        %td=  @user.to_s
+      %tr
+        %td= han('user', :company)
+        %td= link_to @user.companies.first.name, @user.companies.first if @user.companies.any?
+.row-fluid.user-books
+  - [:read_books, :wait_books, :rejected_books, :returned_books].each_with_index do |book_type, index|
+    .span3.well{ class: index % 2 == 0 ? 'even' : 'odd' }
+      %h4= t(".#{book_type}")
+      %ul
+        - @user.send(book_type).each do |book|
+          %li= link_to book.name, book

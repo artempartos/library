@@ -1,0 +1,8 @@
+%h1= t('.title')
+
+%table.table.table-stipped
+- @libraries.each do |library|
+  %tr
+    %td= library.id
+    %td= library
+

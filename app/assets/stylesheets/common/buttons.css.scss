@@ -1,0 +1,17 @@
+.btn {
+  border-radius: 0;
+  padding: 10px 20px;
+  margin: 20px 0 0;
+  display: inline-block;
+  transition: background 0.2s; 
+
+  &.btn-primary {
+    color: #fff;
+    background: #47a3da;
+
+    &:hover {
+      color: #fff;
+      background: #02639d;
+    }
+  }
+}

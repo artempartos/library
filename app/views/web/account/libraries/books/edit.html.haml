@@ -1,0 +1,5 @@
+= simple_form_for @book, url: account_library_book_path(@book.book_id) do |f|
+  = f.input :state_event, as: :state_event
+  = f.input :reader_relation_id, as: :select, collection: @watchers, selected: @reader, allow_blank: true
+  = f.submit
+

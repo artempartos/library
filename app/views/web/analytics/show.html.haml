@@ -1,0 +1,11 @@
+.row-fluid
+  .span6
+    = pie_chart @popular_book
+  .span6
+    = line_chart User.order("DATE(created_at)").group("DATE(created_at)").count
+
+.row-fluid
+  .span6
+    = pie_chart @popular_book
+  .span6
+    = line_chart User.order("DATE(created_at)").group("DATE(created_at)").count

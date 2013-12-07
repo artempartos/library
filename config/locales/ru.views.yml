@@ -1,0 +1,84 @@
+ru:
+  web:
+    sessions:
+      new:
+        title: "Авторизация"
+        sing_in_now: "Зарегистрироваться"
+        remind_password: "Напомнить пароль"
+    books:
+      form:
+        cancel: "Отменить"
+      show:
+        unsubscribe: "Отписаться"
+        subscribe: "Подписаться"
+        edit: "Редактировать"
+        comments: "Комментарии"
+        new_comment: "Добавить комментарий"
+        comment: "Комментарий"
+        description: "Описание"
+      index:
+        title: "Книги"
+        show: "Просмотреть"
+        edit: "Редактировать"
+        add_book: "Добавить книгу"
+      new:
+        title: "Добавление новой книги"
+    companies:
+      show:
+        are_you_sure: "Вы уверены?"
+      index:
+        add_company: "Добавить компанию"
+        edit_employees: "Редактирование персонала"
+        edit_company: "Редактирование компании"
+        destroy_company: "Удалить компанию"
+        are_you_sure: "Вы уверены?"
+      employees:
+        index:
+          are_you_sure: "Вы уверены"
+          delete: "Удалить"
+    users:
+      show:
+        title: "Просмотр пользователя"
+        read_books: "Прочитанные книги"
+        wait_books: "Ожидающие прочтения"
+        rejected_books: "Недочитанные книги"
+        returned_books: "Возвращенные книги"
+      new:
+        title: Регистрация
+        already_registered?: Уже зарегистрирован?
+        login: Войти
+      index:
+        title: "Участники"
+        add_user: "Добавить пользователя"
+        edit_user: "Редактирование пользователя"
+        destroy_user: "Удалить пользователя"
+        are_you_sure: "Вы уверены?"
+
+    remind_passwords:
+      new:
+        password_recovery: Восстановление пароля
+        recovery: Восстановить
+
+    account:
+      passwords:
+        edit:
+          password_reset: Изменить пароль
+          reset: Изменить
+      queues:
+        show:
+          title: Планирую почитать
+      libraries:
+        show:
+          title: Библиотека
+          edit: Редактировать
+          delete: Удалить
+          delete_confirm: Вы действительно хотите удалить?
+    welcome:
+      index:
+        show: "Просмотреть"
+        edit: "Редактировать"
+  shared:
+    comments:
+      form:
+        cancel: "Отмена"
+        comment: "Комментарий"

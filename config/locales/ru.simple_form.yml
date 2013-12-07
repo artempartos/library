@@ -1,0 +1,5 @@
+ru:
+  simple_form:
+    labels:
+      accept_agreement: Согласие на обработку персональных данных
+      comment: "Комментарий"

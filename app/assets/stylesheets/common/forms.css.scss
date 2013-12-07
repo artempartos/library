@@ -1,0 +1,18 @@
+form {
+
+  .control-group {
+
+    label {
+      color: #000;
+      font-weight: bold;
+    }
+
+    input, textarea, select {
+      width: 450px;
+
+      border-radius: 0;
+      padding: 6px 9px;
+      border: 1px solid #000;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+%h1= t '.title'
+
+.row-fluid.books
+  - @books.each_with_index do |book, index|
+    .span3.book{ class: "#{'no-margin' if index % 4 == 0}"}
+      = image_tag(book.book_cover.thumb, data: { src: "holder.js/300x200" }, alt: "")
+      .caption
+        %h3
+          = book.name
+        %h5
+          = book.author
+        .buttons
+          = link_to t('.show'), book_path(book), class: 'btn-line btn-show'
+          = link_to t('.edit'), account_library_books_path(book_id: book.id), method: :post, class: 'btn-line btn-edit'
+
+= link_to t('.add_book'), new_book_path, class: 'btn btn-primary'

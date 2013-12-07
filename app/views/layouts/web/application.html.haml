@@ -1,0 +1,18 @@
+!!! 5
+%html(lang="en")
+  = render 'layouts/web/shared/head'
+  = javascript_include_tag "//www.google.com/jsapi", "chartkick"
+  = javascript_include_tag "application"
+  %body.navbar-big
+    = render 'layouts/web/shared/navbar'
+
+    .container-fluid.block-container.main-container
+      .row-fluid
+        .span12
+          = bootstrap_flash
+          = yield
+
+    .container-fluid.main-container.block-container
+      = render 'layouts/web/shared/footer'
+
+

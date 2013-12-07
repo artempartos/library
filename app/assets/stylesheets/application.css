@@ -1,0 +1,44 @@
+/*
+ *= require bootstrap_and_overrides
+ *= require chosen
+ *= require jquery.ui.core
+ *= require jquery.ui.theme
+ *= require_self
+ *= require_tree .
+ */
+
+body.navbar-big {
+  margin-top: 110px;
+}
+
+body {
+  margin-top: 60px;
+  background: #f0f0f0;
+}
+
+
+.block-container {
+  border: solid 1px #e0e1db;
+  background: #fff;
+
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.main-container {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.jumbotron {
+  text-align: center;
+}
+
+/* .company-layout-container { */
+/*   max-width: 960px; */
+/* } */
+
+.bordered {
+  /* border: 3px solid #47a3da; */
+}

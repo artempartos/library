@@ -1,0 +1,33 @@
+%h1= @company.name
+.users-list
+  %table.table.table-striped
+    %thead
+      %tr
+        %th= han('user', :name)
+        %th= han('user', :achievments)
+        %th= han('user', :options)
+    %tbody
+      - @company.employees.each do |user|
+        %tr
+          %td.user-name
+            = image_tag user.avatar.present? ? user.avatar.thumb.url : asset_path('non_member.png')
+            = link_to user, user
+          %td
+            %ul.members-list
+              %li
+                %a(href="#")
+                  %img{ src: asset_path('non_member.png') }
+              %li
+                %a(href="#")
+                  %img{ src: asset_path('non_member.png') }
+              %li
+                %a(href="#")
+                  %img{ src: asset_path('non_member.png') }
+          %td.actions
+            .btn-group.pull-right
+              - if user == current_user
+                = link_to edit_account_profile_path, class: 'btn btn-success' do
+                  %i.icon-edit
+              = link_to company_employee_path(@company, user.id), method: 'delete', class: 'btn btn-danger', data: {confirm: t('.are_you_sure')} do
+                %i.icon-trash
+

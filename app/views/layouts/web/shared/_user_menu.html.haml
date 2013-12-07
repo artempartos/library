@@ -1,0 +1,13 @@
+- if signed_in?
+  %li.dropdown
+    %a.dropdown-toggle{href: '#', "data-toggle" => 'dropdown'}
+      = current_user
+      %b.caret
+    %ul.dropdown-menu
+      = menu_item t('.profile'), edit_account_profile_path
+      = menu_item t('.mylibrary'), account_library_path
+      = menu_item t('.sign_out'), session_path, method: :delete
+
+- else
+  = menu_item t(".sign_up"), new_user_path
+  = menu_item t(".sign_in"), new_session_path

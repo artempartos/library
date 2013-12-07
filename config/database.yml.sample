@@ -1,0 +1,27 @@
+setup: &setup
+  adapter: postgresql
+  encoding: unicode
+
+development:
+  <<: *setup
+  database: library_development
+  pool: 5
+  username: postgres
+  password:
+
+test:
+  <<: *setup
+  database: library_test
+  host: /var/run/postgresql
+  pool: 5
+  username: postgres
+  password:
+
+production:
+  <<: *setup
+  database: library_production
+  pool: 5
+  timeout: 5000
+  username: postgres
+  password:
+

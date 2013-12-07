@@ -1,0 +1,23 @@
+.span6
+  %table.table.table-striped
+    %thead
+      %tr
+        %th= han('user', :avatar)
+        %th= han('user', :full_name)
+        %th= han('user', :options)
+    %tbody
+      - @employees.each do |user|
+        %tr
+          %td= user.to_s
+          %td= link_to user.email, user
+          %td
+            .btn-group.pull-right
+              = link_to company_employee_path(resource_company, user.id),
+              method: 'delete', class: 'btn btn-danger', data: {confirm: t('.are_you_sure')} do
+                %i.icon-trash
+
+.span6
+  = simple_form_for :users, url: company_employees_path do |f|
+    = f.input :emails, as: :text
+    .form-actions
+      = f.button :submit, class: 'btn btn-primary'

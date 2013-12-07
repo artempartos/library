@@ -1,0 +1,22 @@
+!!! 5
+%html(lang="en")
+  = render 'layouts/web/shared/head'
+
+  %body.navbar-big
+    = render 'layouts/web/shared/navbar'
+
+    = render 'layouts/web/shared/main_carousel'
+    
+    = render 'layouts/web/shared/welcome'
+
+    .container-fluid.block-container.main-container
+      .row-fluid
+        .span12
+          = bootstrap_flash
+          = yield
+
+    .container-fluid.main-container.block-container
+      = render 'layouts/web/shared/footer'
+
+
+    = javascript_include_tag "application"

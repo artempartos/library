@@ -1,0 +1,27 @@
+%h1
+  = t('.title')
+
+  %span.pull-right
+    = link_to new_book_path do
+      %i.icon-plus
+    = link_to books_path do
+      %i.icon-th-large
+
+- if current_user == current_user.companies.first.try(:creator)
+  = simple_form_for :book, url: account_library_path do |f|
+    = f.input :id, collection: book_collection(@library)
+    = f.button :submit, class: 'btn btn'
+
+- if @books
+  .row-fluid.books
+    - @books.each_with_index do |book, index|
+      .span3.book{ class: "#{'no-margin' if index % 4 == 0}"}
+        = image_tag(book.book_cover.thumb, data: { src: "holder.js/300x200" }, alt: "")
+        .caption
+          %h3
+            = book.name
+          %h5
+            = book.author
+          .buttons
+            = link_to t('.edit'), edit_account_library_book_path(book), class: 'btn-line btn-show'
+            = link_to t('.delete'), account_library_book_path(book), method: :delete, data: { confirm: t('.delete_confirm') }, class: 'btn-line btn-edit'

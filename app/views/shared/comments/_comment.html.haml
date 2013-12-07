@@ -1,0 +1,9 @@
+.media
+  = link_to comment.user, class: 'pull-left' do
+    = image_tag comment.user.avatar.present? ? comment.user.avatar.thumb.url : asset_path('non_member.png'), class: 'media-object'
+  .media-body
+    %h5.media-heading
+      = comment.user
+      %small= l comment.created_at, format: :short
+    %p
+      = comment.comment

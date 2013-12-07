@@ -1,0 +1,58 @@
+%h2= @book
+.row-fluid
+  .span4
+    %figure
+      -# FIXME use cover instead of book_cover
+      = image_tag @book.book_cover.thumb
+  .span8
+    %table.table.table-striped
+      %tr
+        %td= han(:book, :author)
+        %td= @book.author
+      %tr
+        %td= han(:book, :year)
+        %td= @book.year
+      %tr
+        %td= han(:book, :isbn)
+        %td= @book.isbn
+      %tr
+        %td= han(:book, :tags)
+        %td= @book.tag_list
+      - if @company.present?
+        %tr
+          - if @book.subscribable_by?(current_user)
+            - if current_user.can_interest?(@book)
+              %td
+              %td
+                - if @watchers.any?
+                  = "#{@watchers.count} watchers already"
+                = button_to t('.subscribe'), account_library_subscriptions_path(book_id: @book), method: 'post', class: 'btn btn-primary'
+          - else
+            - if current_user.wait_books.include?(@book)
+              %td
+              %td= button_to t('.unsubscribe'), account_library_subscription_path(@subscription), method: 'delete', class: 'btn btn-primary'
+        %tr
+          %td
+          %td= button_to t('.edit'), edit_book_path(@book), method: 'get', class: 'btn'
+
+%hr
+- if @book.description?
+  .panel.panel-default
+    .panel-heading
+      %h4= t('.description')
+    .panel-body
+      = @book.description
+%hr
+.panel.panel-default
+  .panel-heading
+    %h4= t('.comments')
+  %hr
+  .panel-body
+    - @book.comments.each do |comment|
+      - if comment.persisted?
+        = render "shared/comments/comment", comment: comment
+  .panel-heading
+    .well
+      %h4= t('.new_comment')
+      = simple_form_for @new_comment, url: book_comments_path(@book), html: {class: 'form-horizontal'} do |f|
+        = render 'shared/comments/form', f: f
