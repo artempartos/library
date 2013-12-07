@@ -13,23 +13,3 @@
           = link_to t('.edit'), account_library_books_path(book_id: book.id), method: :post, class: 'btn-line btn-edit'
 
 %hr
-%h1 Компании
-
-.companies-list
-  %table.table.table-striped
-    %thead
-      %tr
-        %th= han('company', :name)
-        %th= han('company', :employees)
-    %tbody
-      - @companies.each do |company|
-        %tr
-          %td.company-name
-            = image_tag company.logo.present? ? company.logo.thumb.url : asset_path('non_member.png')
-            = link_to company.name, company
-          %td
-            %ul.members-list
-              - company.employees.last(3).each do |member|
-                %li
-                  = link_to member do
-                    = image_tag member.avatar.present? ? member.avatar.thumb.url : asset_path('non_member.png')
