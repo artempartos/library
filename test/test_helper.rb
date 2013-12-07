@@ -16,6 +16,4 @@ class ActiveSupport::TestCase
 
   include FactoryGirl::Syntax::Methods
   include Concerns::AuthManagment
-
-  Nexmo.any_instance.stub(:send_message!).return(true)
 end
