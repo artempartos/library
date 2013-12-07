@@ -43,10 +43,6 @@ class Web::Account::Libraries::BooksController < Web::Account::Libraries::Applic
         b = Book.find(params[:id])
         UserMailer.avaliable_book(user, b, resource_library).deliver
         phone = user.phone
-        if /79[\d]{9}/.match(phone)
-          nexmo = Nexmo::Client.new(configus.nexmo.key, configus.nexmo.secret)
-          nexmo.send_message!({:to => phone, :from => "CoLibrary", :text => "Книга #{b.name} освободилась", :type=>"unicode"})
-        end
       end
 
     when "borrow"
